@@ -155,5 +155,12 @@ nav a div {
 
 img {
   padding: 4px;
+  height: 20
+  0px;
+}
+
+.out {
+  margin: 200px;
+    border: 2px solid red;
 }
 /*# sourceMappingURL=styles.css.map */
