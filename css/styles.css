@@ -1,3 +1,5 @@
+@import url(c:\Users\mauro\Acamica\FullStack\Proyecto_2\gifOS\css\pages\theme1.css);
+@import url(c:\Users\mauro\Acamica\FullStack\Proyecto_2\gifOS\css\pages\theme2.css);
 body {
   margin: 0;
 }
@@ -5,14 +7,6 @@ body {
 .button {
   width: 144px;
   height: 36px;
-}
-
-body {
-  background-color: rosybrown;
-}
-
-body {
-  background-color: blue;
 }
 
 nav {
@@ -87,24 +81,6 @@ nav #selector-theme {
   height: 70px;
 }
 
-nav #to-rose, nav #to-blue {
-  width: 25px;
-  height: 25px;
-  border: 1px solid white;
-  display: block;
-  margin: 0 auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-nav #to-rose {
-  background: rosybrown;
-}
-
-nav #to-blue {
-  background: royalblue;
-}
-
 nav .dropbtn {
   background-color: #F7C9F3;
   color: white;
@@ -153,14 +129,42 @@ nav a div {
   margin: 1px;
 }
 
+.crearGifsBox {
+  width: 50% !important;
+}
+
+.crearGifsBox p {
+  margin: 0;
+}
+
+.crearGifsBox .top {
+  color: #fff;
+  height: 23px;
+  border-bottom: 1px solid black;
+  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  -webkit-box-shadow: 0 1px 0 0 #110038;
+          box-shadow: 0 1px 0 0 #110038;
+}
+
+.arrow {
+  border: none;
+  background: none;
+}
+
 img {
   padding: 4px;
-  height: 20
-  0px;
 }
 
 .out {
-  margin: 200px;
-    border: 2px solid red;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 2px solid red;
 }
 /*# sourceMappingURL=styles.css.map */

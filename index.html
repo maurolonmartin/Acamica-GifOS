@@ -1,69 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>gifOS</title>
-    
-    <link rel="stylesheet" type="text/css" href="./css/styles.css">
-    <link id="theme" rel="stylesheet" type="text/css" href="./css/pages/theme1.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js" type="text/javascript"></script>
-</head>
-<body>
+
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <link
+      id="theme"
+      rel="stylesheet"
+      type="text/css"
+      href="./css/pages/theme1.css"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"
+      type="text/javascript"
+    ></script>
+  </head>
+  <body>
     <nav class="navigation">
-        <div class="top">
-            <p>
-                ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número de visitas: 12.765.803
-            </p>
+      <div class="top">
+        <p>
+          ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
+          de visitas: 12.765.803
+        </p>
+      </div>
+      <section class="bottom">
+        <div>
+          <img
+            src="./assets/gifOF_logo.png"
+            alt="logo con las letras b y d"
+            class="bola"
+          />
         </div>
-        <section class="bottom">
-            <div>
-                <img src="./assets/gifOF_logo.png" alt="logo con las letras b y d" class="bola">
+        <section class="butons">
+          <div>
+            <button
+              class="button"
+              onclick="window.location.href = '../views/video.html';"
+            >
+              Crear Guifos
+            </button>
+          </div>
+          <!--Botones para cambio de estilo-->
+          <div class="dropdown">
+            <button onclick="show_hide()" class="dropbtn button">
+              Elegir tema
+            </button>
+            <div style="display: none;" class="dropdown-content" id="dropdown">
+              <a id="rose" onclick="changeTheme1()"><div>Sailor Day</div></a>
+              <a id="blue" onclick="changeTheme2()">Sailor Night</a>
             </div>
-            <section class="butons">
-                <div>
-                    <button class="button">Crear Guifos</button>
-                </div>
-                <!--Botones para cambio de estilo-->
-                <div class="dropdown">
-                    <button onclick="show_hide()" class="dropbtn button" >Elegir tema</button>
-                    <div style="display: none;" class="dropdown-content" id="dropdown">
-                        <a id="rose" onclick="changeTheme1()"><div>Sailor Day</div></a>
-                        <a id="blue" onclick="changeTheme2()">Sailor Night</a>
-                    </div>
-                </div>
-                <!--Fin cambio de botones-->
-                <div>
-                    <button class="button">Mis Gifos</button>
-                </div>
-            </section>
-            
+          </div>
+          <!--Fin cambio de botones-->
+          <div>
+            <button class="button">Mis Gifos</button>
+          </div>
         </section>
+      </section>
     </nav>
     <!-- Busqueda de gifs -->
     <h1>gifos</h1>
     <form>
-        <label for="search">Buscar</label>
-        <input type="search" id="search">
-        <button id="btnSearch" class="button">Buscar</button>
+      <label for="search">Buscar</label>
+      <input type="search" id="search" />
+      <button id="btnSearch" class="button">Buscar</button>
     </form>
     <div class="sugerencias">
-        las sugerencias deben cargar antes de los resultados de la busqueda. 
+      las sugerencias deben cargar antes de los resultados de la busqueda.
     </div>
 
     <div class="out" id="out"></div>
     <!-- Fin busqueda y muestra de gifs-->
-
-
-    <p>
-        <button id="btnStart" class="button" onclick="getStreamAndRecord ()">Start recording</button>
-        <br>
-        <button id="btnStop" class="button" onclick="stream()">Stop recording</button>
-    </p>
-    <video id="vid2"></video>
-
     <script src="./js/api.js"></script>
-</body>
-
+  </body>
 </html>
