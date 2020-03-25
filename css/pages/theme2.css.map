@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAC;EACH,gBAAgB,EAAE,OAAO;CAC1B;;AAED,AAAA,IAAI,CAAC;EACH,gBAAgB,ECNG,iDAAiD;EDOpE,UAAU,EAAE,iBAAiB;CAC9B",
+    "sources": [
+        "theme2.scss",
+        "../atoms/_variables.scss"
+    ],
+    "names": [],
+    "file": "theme2.css"
+}

@@ -1,0 +1,15 @@
+@import '../atoms/_variables.scss';
+
+body {
+  background-color: #fff4fd;
+}
+
+.top {
+  color: #fff;
+  width: 100%;
+  height: 23px;
+  border-bottom: 1px solid black;
+  background-image: $gradientPrincipal;
+  box-shadow: 0 1px 0 0 #110038;
+}
+

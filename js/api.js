@@ -3,9 +3,9 @@
 
 function show_hide() {
     var click = document.getElementById("dropdown");
-    if(click.style.display === "none") {
+    if (click.style.display === "none") {
         click.style.display = "block";
-    }else {
+    } else {
         click.style.display = "none";
     }
 }
@@ -13,13 +13,11 @@ function show_hide() {
 // selector de thema
 function changeTheme1() {
     document.getElementById("theme").setAttribute("href", "./css/pages/theme1.css");
-    console.log("boton rosa presionado");
 }
 
 function changeTheme2() {
-    
     document.getElementById("theme").setAttribute("href", "./css/pages/theme2.css");
-    console.log("boton blue presionado");
+    document.getElementById("logo").setAttribute("src", "./assets/gifOF_logo_dark.png");
 }
 //const element = document.getElementsByTagName("img");
 
@@ -32,79 +30,77 @@ document.addEventListener("DOMContentLoaded", trendig);
 
 document.addEventListener("DOMContentLoaded", init);
 function init() {
-    
-   document.getElementById("btnSearch").addEventListener("click", ev => {
-       removeTag();
-       
-       ev.preventDefault();
-       let url = `${apiUrl}search?api_key=${apiKey}&q=`;
-       let str = document.getElementById("search").value.trim();
-       url = url.concat(str);
-       console.log(url);
-       fetch(url)
-       .then(response => response.json())
-       .then(content => {
-        let data = [];
-        data = content.data;
-        //console.log(data);
-            for( let i = 0; i < data.length; i++) {
-                let img = document.createElement('img');
-                img.src = data[i].images.fixed_height.url;
-                img.alt = data[i].title;
-                let out = document.querySelector('.out');
-                out.insertAdjacentElement('afterbegin', img);
-                document.querySelector('input').value="";
-            }
-            //removeTag();     
-       })
-       .catch(err => {
-           console.log(err);
-       });
-   }); 
+
+    document.getElementById("btnSearch").addEventListener("click", ev => {
+        removeTag();
+
+        ev.preventDefault();
+        let url = `${apiUrl}search?api_key=${apiKey}&q=`;
+        let str = document.getElementById("search").value.trim();
+        url = url.concat(str);
+        console.log(url);
+        fetch(url)
+            .then(response => response.json())
+            .then(content => {
+                let data = [];
+                data = content.data;
+                //console.log(data);
+                for (let i = 0; i < data.length; i++) {
+                    let img = document.createElement('img');
+                    img.src = data[i].images.downsized_medium.url;
+                    img.alt = data[i].title;
+                    let out = document.querySelector('.out');
+                    out.insertAdjacentElement('afterbegin', img);
+                    document.querySelector('input').value = "";
+                }
+                //removeTag();     
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    });
 }
 
 function removeTag() {
-    
+
     var element = document.getElementsByTagName("img"), index;
 
     for (index = element.length - 1; index >= 0; index--) {
         element[index].parentNode.removeChild(element[index]);
-        console.log("borrado ", index);
     }
 }
 
 function trendig() {
     let urlTrending = `${apiUrl}trending?api_key=${apiKey}`;
-    console.log(urlTrending);
     fetch(urlTrending)
-       .then(response => response.json())
-       .then(content => {
-        let data = [];
-        data = content.data;
-        console.log(data);
-            for( let i = 0; i < data.length; i++) {
+        .then(response => response.json())
+        .then(content => {
+            let data = [];
+            data = content.data;
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
                 let img = document.createElement('img');
                 img.src = data[i].images.fixed_height.url;
                 img.alt = data[i].title;
                 let out = document.querySelector('.out');
                 out.insertAdjacentElement('afterbegin', img);
-                document.querySelector('input').value="";
+                document.querySelector('input').value = "";
             }
             //removeTag();     
-       })
-       .catch(err => {
-           console.log(err);
-       });
+        })
+        .catch(err => {
+            console.log(err);
+        });
 }
 const video = document.getElementById('vid2');
 
-function getStreamAndRecord () {
+function getStreamAndRecord() {
     navigator.mediaDevices.getUserMedia({
         audio: false,
         video: {
             height: { max: 480 }
         }
-    }).then(function(stream) {
+    }).then(function (stream) {
         video.srcObject = stream;
         video.play()
     })
@@ -116,10 +112,10 @@ recorder = RecordRTC(stream, {
     quality: 10,
     width: 360,
     hidden: 240,
-    onGifRecordingStarted: function() {
-    console.log('started')
+    onGifRecordingStarted: function () {
+        console.log('started')
     },
-    });
+});
 
 function successCallback(stream) {
     document.querySelector('vid2') = URL.createObjectURL(stream);
@@ -128,26 +124,26 @@ function successCallback(stream) {
         type: 'video'
     });
     recorder.startRecording();
-    setTimeout(function() {
-        recorder.stopRecording(function (){
+    setTimeout(function () {
+        recorder.stopRecording(function () {
             var blob = recorder.blob;
             var url = URL.createObjectURL(blob);
             document.getElementById('vid2').src = url;
             document.querySelector('vid2').muted = false;
         });
-    }, 5 * 1000 );
+    }, 5 * 1000);
 
 }
 
-function errorCallback( error ){
+function errorCallback(error) {
     alert(error);
 }
 
 var mediaConstrains = {
     audio: false,
-        video: {
-            height: { max: 480 }
-        }
+    video: {
+        height: { max: 480 }
+    }
 };
 
 navigator.mediaDevices.getUserMedia(mediaConstrains).then(successCallback).catch(errorCallback);
