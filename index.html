@@ -55,17 +55,19 @@
     </section>
   </nav>
   <!-- Busqueda de gifs -->
-  <h1>gifos</h1>
-  <form>
-    <label for="search">Buscar</label>
-    <input type="search" id="search" />
-    <button id="btnSearch" class="button">
-      <img src="./assets/lupa.svg" alt="lopa de busqueda">
-      Buscar
-    </button>
-  </form>
-  <div class="sugerencias">
-    las sugerencias deben cargar antes de los resultados de la busqueda.
+  <div class="oldWindow">
+    <div for="search" class="innerWindow">Buscar</div>
+    <form class="searchForm" autocomplete="off">
+      <input type="search" id="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
+      <button id="btnSearch" class="searchButton">
+        <img src="./assets/lupa.svg" alt="lopa de busqueda">
+        Buscar
+      </button>
+    </form>
+  </div>
+  
+  <div class="sugestions">
+    Hoy te sugerimos:
   </div>
 
   <div class="out" id="out"></div>
