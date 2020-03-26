@@ -40,10 +40,10 @@
           </button>
           <div style="display: none;" class="dropdown-content" id="dropdown">
             <a id="rose" onclick="changeTheme1()">
-              <div>Sailor Day</div>
+              <div class="buttonTheme">Sailor Day</div>
             </a>
             <a id="blue" onclick="changeTheme2()">
-              <div>Sailor Night</div>
+              <div class="buttonTheme2">Sailor Night</div>
             </a>
           </div>
         </div>
@@ -55,21 +55,26 @@
     </section>
   </nav>
   <!-- Busqueda de gifs -->
-  <div class="oldWindow">
-    <div for="search" class="innerWindow">Buscar</div>
-    <form class="searchForm" autocomplete="off">
-      <input type="search" id="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/>
-      <button id="btnSearch" class="searchButton">
-        <img src="./assets/lupa.svg" alt="lopa de busqueda">
-        Buscar
-      </button>
-    </form>
+  <div class="contenedor">
+    <div class="oldWindow">
+      <div for="search" class="innerWindow">Buscar</div>
+      <form class="searchForm" autocomplete="off">
+        <input type="text" id="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/ onkeypress="show_hide_sugestions()">
+        <button id="btnSearch" class="searchButton">
+          <img src="./assets/lupa.svg" alt="lupa de busqueda">
+          Buscar
+        </button>
+      </form>
+    </div>
+    <div id="autocompletar" style="display: none;">
+      <button>Resultado 1</button>
+      <button>Resultado 2</button>
+      <button>Resultado 3</button>
+    </div>
+    <div class="sugestions">
+      Hoy te sugerimos:
+    </div>
   </div>
-  
-  <div class="sugestions">
-    Hoy te sugerimos:
-  </div>
-
   <div class="out" id="out"></div>
   <!-- Fin busqueda y muestra de gifs-->
   <!-- Scripts de la pagina -->

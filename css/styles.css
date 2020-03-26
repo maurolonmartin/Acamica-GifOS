@@ -48,6 +48,8 @@ nav .buttonDropdown {
 }
 
 nav section.bottom {
+  width: 1200px;
+  margin-left: 5%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,8 +112,12 @@ nav .dropdown-content a {
   display: block;
 }
 
-nav .dropdown-content a:hover {
-  background-color: #f1f1f1;
+nav .dropdown-content .buttonTheme:hover {
+  background-color: #FFF4FD;
+}
+
+nav .dropdown-content .buttonTheme2:hover {
+  background-color: #2E32FB;
 }
 
 nav .dropdown:hover .dropdown-content {
@@ -136,27 +142,26 @@ nav .buttonGifos:hover {
   border: dotted;
 }
 
+nav .arrow {
+  border: none;
+  background: none;
+}
+
 .crearGifsBox {
-  width: 50% !important;
+  width: 684px;
+  height: 386px;
+  margin-left: 5%;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 .crearGifsBox p {
   margin: 0;
 }
 
-.crearGifsBox .top {
-  color: #fff;
+.crearGifsBox .windowGuifos {
   height: 23px;
-  border-bottom: 1px solid black;
-  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
-  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-  -webkit-box-shadow: 0 1px 0 0 #110038;
-          box-shadow: 0 1px 0 0 #110038;
-}
-
-.arrow {
-  border: none;
-  background: none;
 }
 
 img {
@@ -164,26 +169,29 @@ img {
 }
 
 .out {
-  width: 70%;
+  width: 1200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-left: 15%;
+  margin-left: 5%;
   margin-right: 15%;
   border: 2px solid red;
 }
 
-.oldWindow {
-  border: outset;
+.contenedor {
+  width: 1200px;
   margin-left: 5%;
   margin-right: 5%;
-  height: 99px;
-  width: 1200px;
 }
 
-.oldWindow .searchForm {
+.contenedor .oldWindow {
+  border: outset;
+  height: 99px;
+}
+
+.contenedor .oldWindow .searchForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -193,14 +201,14 @@ img {
   align-items: center;
 }
 
-.oldWindow .innerWindow {
+.contenedor .oldWindow .innerWindow {
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
   width: 100%;
   color: white;
 }
 
-.oldWindow #search {
+.contenedor .oldWindow #search {
   width: 1057px;
   height: 48px;
   background: #FFFFFF;
@@ -212,7 +220,7 @@ img {
   padding-left: 16px;
 }
 
-.oldWindow .searchButton {
+.contenedor .oldWindow .searchButton {
   width: 102px;
   height: 36px;
   background: #E6E6E6;
@@ -227,10 +235,38 @@ img {
           justify-content: center;
 }
 
+.contenedor #autocompletar {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+}
+
+.contenedor #autocompletar button {
+  width: 1057px;
+  height: 36px;
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  margin-bottom: 10px;
+}
+
+.contenedor #autocompletar button:hover {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
 .sugestions {
   margin-top: 40px;
-  margin-left: 5%;
-  margin-right: 5%;
   height: 32px;
   width: 1200px;
   background: #FFFAFE;

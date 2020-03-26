@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAEA,AAAA,IAAI,CAAC;EACH,gBAAgB,EAAE,OAAO;CAC1B;;AAED,AAAA,IAAI,CAAC;EACH,gBAAgB,ECNG,iDAAiD;EDOpE,UAAU,EAAE,iBAAiB;CAC9B",
+    "mappings": "AAEA,AAAA,IAAI,CAAC;EACH,gBAAgB,EAAE,OAAO;CAC1B;;AAED,AAAA,IAAI,CAAC;EACH,gBAAgB,ECNG,iDAAiD;EDOpE,UAAU,EAAE,iBAAiB;CAC9B;;AAED,AAAA,aAAa,CAAC;EACZ,gBAAgB,ECXG,iDAAiD;CDYrE",
     "sources": [
         "theme2.scss",
         "../atoms/_variables.scss"

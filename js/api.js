@@ -10,6 +10,13 @@ function show_hide() {
     }
 }
 
+function show_hide_sugestions() {
+    var click = document.getElementById("autocompletar");
+    if (click.style.display === "none") {
+        click.style.display = "block";
+    }
+}
+
 // selector de thema
 function changeTheme1() {
     document.getElementById("theme").setAttribute("href", "./css/pages/theme1.css");
