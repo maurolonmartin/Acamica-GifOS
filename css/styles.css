@@ -21,7 +21,7 @@ header {
   margin-bottom: 20px;
 }
 
-header p {
+header p.welcomeMessage {
   margin: 0;
   padding-left: 10px;
 }
