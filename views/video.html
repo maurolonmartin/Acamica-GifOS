@@ -15,7 +15,7 @@
 
 <body>
   <nav class="navigation">
-    <div class="top">
+    <div class="topHeader">
       <p>
         ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
         de visitas: 12.765.803
@@ -36,19 +36,23 @@
     </div>
     <img src="../assets/window_img.png" alt="imagen de ventana de windows xp" />
     <h4>Aquí podrás crear tus propios guifos</h4>
-    <pre>
+    <p>
         Crear tu <strong>guifo</strong> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos 
         personalizados. Los pasos para crear tu guifo son: 
-        1) Dar permisos de acceso a la cámara (sólo por el tiempo de uso) 
-        2) Capturar tu momento guifo 
-        3) Revisar el momento 
-        4) Listo para subir y compartir!
-        ¿Quieres comenzar a crear tu guifo ahora?
-      </pre>
+        <ol>
+          <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+          <li>Capturar tu momento guifo</li>
+          <li>Revisar el momento</li>
+          <li>Listo para subir y compartir!</li>
+        
+      </ol>
+      ¿Quieres comenzar a crear tu guifo ahora?
+      </p>
+      <video id="videoRecord"></video>
+    <button onclick="startVideoRecording();">Iniciar grabación</button>
   </section>
   <div>
-    <video id="videoRecord"></video>
-    <button onclick="startVideoRecording();">Iniciar grabación</button>
+    
     <button onclick="stopVideoRecording();">Detener grabación</button>
   </div>
 

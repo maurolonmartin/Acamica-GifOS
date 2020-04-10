@@ -1,5 +1,8 @@
+@import '../atoms/_variables.scss';
+
 body {
     margin: 0;
+    font-family: $fuentePrincipal;
 }
 
 .button {

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  font-family: "Chakra Petch", sans-serif;
 }
 
 .button {
@@ -7,11 +8,7 @@ body {
   height: 36px;
 }
 
-body {
-  font-family: "Chakra Petch", sans-serif;
-}
-
-nav {
+header {
   width: 100%;
   -webkit-box-pack: flex;
       -ms-flex-pack: flex;
@@ -20,20 +17,14 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  /* Style The Dropdown Button */
-  /* The container <div> - needed to position the dropdown content */
-  /* Dropdown Content (Hidden by Default) */
-  /* Links inside the dropdown */
-  /* Change color of dropdown links on hover */
-  /* Show the dropdown menu on hover */
-  /* Change the background color of the dropdown button when the dropdown content is shown */
+  margin-bottom: 20px;
 }
 
-nav p {
+header p {
   margin: 0;
 }
 
-nav .button {
+header .button {
   width: 144px;
   height: 36px;
   -webkit-box-orient: horizontal;
@@ -42,14 +33,13 @@ nav .button {
           flex-direction: row;
 }
 
-nav .buttonDropdown {
+header .buttonDropdown {
   width: 36px;
   height: 36px;
 }
 
-nav section.bottom {
-  width: 1200px;
-  margin-left: 5%;
+header section.bottom {
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -60,27 +50,36 @@ nav section.bottom {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0px 140px 0 5%;
+  margin-top: 40px;
 }
 
-nav section.bottom .navButtons {
+header section.bottom .navButtons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 420px;
+  /* Style The Dropdown Button */
+  /* The container <div> - needed to position the dropdown content */
+  /* Dropdown Content (Hidden by Default) */
+  /* Links inside the dropdown */
+  /* Change color of dropdown links on hover */
+  /* Show the dropdown menu on hover */
+  /* Change the background color of the dropdown button when the dropdown content is shown */
 }
 
-nav .dropbtn {
-  background-color: #F7C9F3;
-  color: white;
-  font-size: 16px;
-  border: none;
+header section.bottom .navButtons .dropbtn {
   cursor: pointer;
   width: 131px;
 }
 
-nav .dropdown {
+header section.bottom .navButtons .dropdown {
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -91,44 +90,58 @@ nav .dropdown {
           flex-direction: row;
 }
 
-nav .dropdown-content {
+header section.bottom .navButtons .dropdown-content {
   display: none;
   position: absolute;
   top: 100%;
-  background-color: #f9f9f9;
   width: 168px;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
-nav .dropdown-content a {
+header section.bottom .navButtons .dropdown-content a {
   font-size: 16px;
-  color: #110038;
   letter-spacing: 0;
   line-height: 22px;
   padding: 10px;
-  text-decoration: none;
+  display: block;
+  width: 130px;
+  margin: 5px;
+}
+
+header section.bottom .navButtons .dropdown-content a .buttonTheme {
+  height: 36px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header section.bottom .navButtons .dropdown-content a .buttonTheme2 {
+  width: 150px;
+  height: 36px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #F0F0F0;
+  border: 1px solid #808080;
+  -webkit-box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+header section.bottom .navButtons .buttonTheme:hover span {
+  text-decoration: underline;
+}
+
+header section.bottom .navButtons .dropdown:hover .dropdown-content {
   display: block;
 }
 
-nav .dropdown-content .buttonTheme:hover {
-  background-color: #FFF4FD;
-}
-
-nav .dropdown-content .buttonTheme2:hover {
-  background-color: #2E32FB;
-}
-
-nav .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-nav .dropdown:hover .dropbtn {
+header section.bottom .navButtons .dropdown:hover .dropbtn {
   border: 1px solid #110038;
 }
 
-nav a div {
+header section.bottom .navButtons a div {
   width: 150px;
   height: 36px;
   background: #E6E6E6;
@@ -136,62 +149,46 @@ nav a div {
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
-nav .buttonGifos:hover {
-  width: 100px;
-  height: 30px;
-  border: dotted;
+header section.bottom .navButtons .buttonGifos {
+  text-align: center;
+  padding-top: 10px;
 }
 
-nav .arrow {
+header section.bottom .navButtons .underlineLetter {
+  text-decoration: underline;
+}
+
+header section.bottom .navButtons .buttonGifos:hover {
+  width: 95px;
+  height: 25px;
+  border: dotted 2px #110038;
+}
+
+header section.bottom .navButtons .arrow {
   border: none;
   background: none;
 }
 
-.crearGifsBox {
-  width: 684px;
-  height: 386px;
-  margin-left: 5%;
-  background: #E6E6E6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-}
-
-.crearGifsBox p {
-  margin: 0;
-}
-
-.crearGifsBox .windowGuifos {
-  height: 23px;
-}
-
-img {
-  padding: 4px;
-}
-
-.out {
-  width: 1200px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: 5%;
-  margin-right: 15%;
-  border: 2px solid red;
-}
-
-.contenedor {
-  width: 1200px;
+/* Section Busqueda*/
+section.busqueda {
+  width: 90%;
   margin-left: 5%;
   margin-right: 5%;
 }
 
-.contenedor .oldWindow {
+section.busqueda .oldWindow {
   border: outset;
   height: 99px;
 }
 
-.contenedor .oldWindow .searchForm {
+section.busqueda .oldWindow .innerWindow {
+  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  width: 100%;
+  color: white;
+}
+
+section.busqueda .oldWindow .searchForm {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,26 +198,12 @@ img {
   align-items: center;
 }
 
-.contenedor .oldWindow .innerWindow {
-  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
-  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-  width: 100%;
-  color: white;
+section.busqueda .oldWindow .searchForm input {
+  width: 90%;
 }
 
-.contenedor .oldWindow #search {
-  width: 1057px;
-  height: 48px;
-  background: #FFFFFF;
-  border: 1px solid #979797;
-  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-  cursor: pointer;
-  margin-right: 16px;
-  padding-left: 16px;
-}
-
-.contenedor .oldWindow .searchButton {
+section.busqueda .oldWindow .searchButton {
+  margin-left: 10px;
   width: 102px;
   height: 36px;
   background: #E6E6E6;
@@ -235,7 +218,7 @@ img {
           justify-content: center;
 }
 
-.contenedor #autocompletar {
+section.busqueda #autocompleteSuggestedSearch {
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
@@ -249,8 +232,8 @@ img {
   padding: 20px;
 }
 
-.contenedor #autocompletar button {
-  width: 1057px;
+section.busqueda #autocompleteSuggestedSearch button {
+  width: 90%;
   height: 36px;
   background: #F0F0F0;
   border: 1px solid #808080;
@@ -259,16 +242,25 @@ img {
   margin-bottom: 10px;
 }
 
-.contenedor #autocompletar button:hover {
+section.busqueda #autocompleteSuggestedSearch button:hover {
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
-.sugestions {
+/*Section Sugerencias*/
+section.sugerencias {
+  width: 90%;
+  height: 352px;
+  margin-left: 5%;
+  margin-top: 64px;
+  margin-bottom: 50px;
+}
+
+section.sugerencias .sugestions {
   margin-top: 40px;
   height: 32px;
-  width: 1200px;
+  width: 100%;
   background: #FFFAFE;
   border: 1px solid #E6BBE2;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
@@ -276,5 +268,101 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 40px;
+}
+
+section.sugerencias .suggestionGif {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: (1fr)[1];
+      grid-template-rows: repeat(1, 1fr);
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  position: relative;
+}
+
+section.sugerencias .suggestionGif .divImgGif {
+  width: 288px;
+  height: 313px;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+section.sugerencias .suggestionGif .hashTagTop {
+  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  width: 98%;
+  margin-left: 1%;
+}
+
+section.sugerencias .suggestionGif a {
+  position: absolute;
+  bottom: 15px;
+  left: 7px;
+  background-color: #4180f6;
+  color: #ffffff;
+  width: 81px;
+  padding: 8px 10px;
+  text-align: center;
+}
+
+/*Section Tendencias*/
+section.tendencias {
+  width: 90%;
+  margin-left: 5%;
+}
+
+section.tendencias input.trendingsGif {
+  margin-top: 40px;
+  height: 32px;
+  width: 100%;
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 40px;
+}
+
+section.tendencias div.searchGif {
+  width: 1200px;
+  margin-left: 5%;
+  margin-right: 15%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(0, 25%))[4];
+      grid-template-columns: repeat(4, minmax(0, 25%));
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+}
+
+section.tendencias div.searchGif .hashTagBottom {
+  display: none;
+}
+
+section.tendencias div.searchGif .hashTagBottom:hover {
+  display: block;
+  background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+/* video view*/
+ol li {
+  list-style-type: none;
+  counter-increment: lista;
+  position: relative;
+}
+
+ol li::before {
+  content: counter(lista) ")";
+  left: -32px;
+  position: absolute;
+  text-align: right;
+  width: 26px;
 }
 /*# sourceMappingURL=styles.css.map */

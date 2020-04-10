@@ -6,15 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>gifOS</title>
+  <link rel="icon" href="favicon.ico" >
   <link href="https://fonts.googleapis.com/css?family=Chakra+Petch&display=swap" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="./css/styles.css" />
-  <link id="theme" rel="stylesheet" type="text/css" href="./css/pages/theme1.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/pages/theme1.css" id="theme" />
 </head>
 
 <body>
-  <nav class="navigation">
-    <div class="top">
+  <header class="navigation">
+    <div class="topHeader">
       <p>
         ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
         de visitas: <span id="contador"></span>
@@ -22,7 +22,7 @@
     </div>
     <section class="bottom">
       <div>
-        <img src="./assets/gifOF_logo.png" alt="logo con las letras b y d" class="bola" id="logo" />
+        <img src="./assets/gifOF_logo.png" alt="logo con la palabra gifos" id="logo" />
       </div>
       <section class="navButtons">
         <div>
@@ -32,56 +32,68 @@
         </div>
         <!--Botones para cambio de estilo-->
         <div class="dropdown">
-          <button class="dropbtn button" onclick="show_hide()">
+          <button class="dropbtn button">
             Elegir tema
           </button>
-          <button class="buttonDropdown" onclick="show_hide()">
-            <img src="./assets/dropdown.svg" alt="flacha con dirección hacia abajo">
+          <button class="buttonDropdown button" onclick="show_hide()">
+            <div class="triangle"></div>
           </button>
           <div style="display: none;" class="dropdown-content" id="dropdown">
-            <a id="rose" onclick="changeTheme1()">
-              <div class="buttonTheme">Sailor Day</div>
+            <a id="rose" onclick="changeTheme1()" class="buttonTheme">
+              <span>S</span>ailor Day
             </a>
-            <a id="blue" onclick="changeTheme2()">
-              <div class="buttonTheme2">Sailor Night</div>
+            <a id="blue" onclick="changeTheme2()" class="buttonTheme">
+              <span>S</span>ailor Night
             </a>
           </div>
         </div>
         <!--Fin cambio de botones-->
         <div class="buttonGifos">
-          <a>Mis Gifos</a>
+          <a><span class="underlineLetter">M</span>is Gifos</a>
         </div>
       </section>
     </section>
-  </nav>
+  </header>
   <!-- Busqueda de gifs -->
-  <div class="contenedor">
+  <section class="busqueda">
     <div class="oldWindow">
       <div for="search" class="innerWindow">Buscar</div>
       <form class="searchForm" autocomplete="off">
-        <input type="text" id="search" placeholder="Busca gifs, hashtags, temas, busca lo que quieras…"/ onkeypress="show_hide_sugestions()">
-        <button id="btnSearch" class="searchButton">
+        <input type="text" id="searchWord" name="searchWord" class="searchWord"
+        placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" autocomplete="off"
+        onkeypress="show_hide_sugestions()">
+        <button id="btnSearch" class="searchButton" >
           <img src="./assets/lupa.svg" alt="lupa de busqueda">
           Buscar
-        </button>
+      </button>
       </form>
     </div>
-    <div id="autocompletar" style="display: none;">
+    <div id="autocompleteSuggestedSearch" class="autocompleteSuggestedSearch hide" style="display: none;">
+      <div class="seach"></div>
       <button>Resultado 1</button>
       <button>Resultado 2</button>
       <button>Resultado 3</button>
     </div>
-    <div class="sugestions">
-      Hoy te sugerimos:
-    </div>
-  </div>
-  <div class="out" id="out"></div>
+    <div class="autocompleteHashTag hide"></div>
+  </section>
+  <section class="sugerencias">
+    <input class="sugestions"
+      readonly
+      placeholder="Hoy te sugerimos:">
+    <div class="suggestionGif" id="suggestionGif"></div> 
+  </section>
+  <section class="tendencias">
+    <input class="trendingsGif" id="trendingsGif"
+    type="text" name="trendingsGif" placeholder="Tendencias" readonly/>
+    <div class="searchGif" id="trendingGif"></div>
+  </section>
   <!-- Fin busqueda y muestra de gifs-->
   <!-- Scripts de la pagina -->
+  <script src="./js/const.js"></script>
   <script src="./js/api.js"></script>
+  <script src="./js/gifCreation.js"></script>
+  
 
-  <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-  <script src="../js/recordRTC.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-database.js"></script>
