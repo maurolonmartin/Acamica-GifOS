@@ -25,6 +25,8 @@ function startVideoRecording() {
     .catch(function(err) {
       console.log(err.name + ": " + err.message);
     });
+    
+  console.log("Paula", navigator.mediaDevices.getUserMedia); 
 }
 
 function validateAndPrepareNavigator() {
@@ -32,7 +34,7 @@ function validateAndPrepareNavigator() {
   if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
   }
-
+  console.log("Paula2", navigator.mediaDevices.getUserMedia); 
   // Some browsers partially implement mediaDevices. We can't just assign an object
   // with getUserMedia as it would overwrite existing properties.
   // Here, we will just add the getUserMedia property if it's missing.
@@ -70,6 +72,7 @@ function showVideoRecording(stream) {
   video.onloadedmetadata = function(e) {
     video.play();
   };
+  console.log("Paula3", navigator.mediaDevices.getUserMedia); 
 }
 
 function stopVideoRecording() {

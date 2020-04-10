@@ -20,13 +20,11 @@ function show_hide_sugestions() {
 function changeTheme1() {
     document.getElementById("theme").setAttribute("href", "./css/pages/theme1.css");
     document.getElementById("logo").setAttribute("src", "./assets/gifOF_logo.png");
-    document.getElementById("dropdownArrow").setAttribute("src", "./assets/dropdown.svg");
 }
 
 function changeTheme2() {
     document.getElementById("theme").setAttribute("href", "./css/pages/theme2.css");
     document.getElementById("logo").setAttribute("src", "./assets/gifOF_logo_dark.png");
-    document.getElementById("dropdownArrow").setAttribute("src", "./assets/white_dropdown.png");
 }
 
 const video = document.getElementById('vid2');

@@ -1,6 +1,7 @@
 @import './atoms/normalize';
 @import './atoms/_variables';
 
+/* Section Header*/
 header {
   width: 100%;
   justify-content: flex;
@@ -9,6 +10,7 @@ header {
   
   p {
     margin: 0;
+    padding-left: 10px;
   }
 
   .button {
@@ -18,8 +20,13 @@ header {
   }
 
   .buttonDropdown {
-    width: 36px;
-    height: 36px;
+    width: 34px;
+    height: 34px;
+
+    .triangle {
+      margin-left: 17%;
+      margin-top: 31%;
+    }
   }
 
   section.bottom {
@@ -30,6 +37,11 @@ header {
     justify-content: space-between;
     margin: 0px 140px 0 5%;
     margin-top: 40px;
+
+    .arrow {
+      background: none;
+      border: none;
+    }
 
     .navButtons {
       display: flex;
@@ -130,6 +142,7 @@ header {
     }
   }
 }
+/* Fin Section Header*/
 
 /* Section Busqueda*/
 section.busqueda {
@@ -157,6 +170,11 @@ section.busqueda {
 
       input {
         width: 90%;
+        height: 48px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+        padding-left: 10px;
       }
 
     }
@@ -195,26 +213,26 @@ section.busqueda {
       box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
     }
   }
-  
 }
+/* Fin Section Busqueda*/
 
 /*Section Sugerencias*/
 section.sugerencias {
   width: 90%;
-  height: 352px;
   margin-left: 5%;
-  margin-top: 64px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   .sugestions {
     margin-top: 40px;
     height: 32px;
-    width: 100%;
+    width: 99%;
     background: #FFFAFE;
     border: 1px solid #E6BBE2;
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    padding-left: 10px;
   }
 
   .suggestionGif {
@@ -226,16 +244,26 @@ section.sugerencias {
     position: relative;
 
     .divImgGif {
-    width: 288px;
-    height: 313px;
+    width: 100%;
+    height: 100%;
     background: #E6E6E6;
     box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    }
+
+    .imgGif {
+      width: 98%;
+      height: 93%;
+      margin-top: 0;
+      margin-left: 1%;
     }
 
     .hashTagTop {
       background-image: $gradientPrincipal;
       width: 98%;
       margin-left: 1%;
+      margin-top: 1%;
+      margin-bottom: 0;
+      color: #fff;
     }
 
     a{
@@ -245,62 +273,181 @@ section.sugerencias {
       background-color: #4180f6;
       color: #ffffff;
       width: 81px;
-      padding: 8px 10px;
       text-align: center;
     }
   }
 }
+/* Fin Section Sugerencias*/
 
 /*Section Tendencias*/
 section.tendencias {
   width: 90%;
   margin-left: 5%;
+  margin-bottom: 20px;
 
   input.trendingsGif {
     margin-top: 40px;
     height: 32px;
-    width: 100%;
+    width: 99%;
     background: #FFFAFE;
     border: 1px solid #E6BBE2;
     box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     align-items: center;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+    padding-left: 10px;
   }
 
   div.searchGif {
-    width: 1200px;
-    margin-left: 5%;
-    margin-right: 15%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 25%));
     grid-column-gap: 16px;
     grid-row-gap: 16px;
 
-    .hashTagBottom {
-      display: none;
-    }
+    .divImgGiftrendingGif {
+      width: 100%;
+      height: 300px;
+      position: relative;
+
+      .imgGif {
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        object-fit: cover;
+      }
   
-    .hashTagBottom:hover {
-      display: block;
-      background: $gradientPrincipal;
+      .hashTagBottom {
+        color: #fff;
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        margin-top: 0;
+        bottom: -17px;
+      }
+
+      &:hover {
+        p{
+          opacity: 1;
+        background: $gradientPrincipal;
+        }
+      }
+    }
+  }
+
+  div.divImgGif:hover {
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    border: 1px black dotted;
+  }
+}
+/*Fin Section Tendencias*/
+
+/* Video view*/
+/* Section Header*/
+header {
+  .iconsSecondView {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+    .arrow {
+      cursor: pointer;
+      margin-right: 5px;
+    }
+  }
+}
+  
+section.crearGifsBox {
+  width: 100%;
+  margin-top: 7%;
+
+  .principalBox {
+    width: 47.5%;
+    height: 35.9%;
+    margin-left: 25%;
+    background: #E6E6E6;
+    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+
+    .innerWindow {
+      width: 99.5%;
+      margin-top: 0%;
+      margin-left: 3px;
+      height: 24px;
+
+      span {
+        font-size: 14px;
+        color: #FFF;
+        font-weight: 700;
+      }
+    }
+
+    .content {
+      padding: 8px 14px 13px 8px;
+      display: flex;
+
+      .imgContainer {
+        padding: 22px 16px 0 7px;
+      }
+
+      .textContainer {
+        padding-top: 21px;
+        max-width: 518px;
+
+        h2 {
+          font-size: 16px;
+          line-height: 22px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+
+        ol li {
+          list-style-type: none;
+          counter-increment: lista; 
+          position: relative;
+          font-weight: 700;
+          }
+          
+          ol li::before {
+          content: counter(lista) ")"; 
+          left: -32px;
+          position: absolute;
+          text-align: right;
+          width: 26px;
+          }
+
+      }
+    }
+
+    .createButton {
+      width: 144px;
+      height: 36px;
+      background: #FFF4FD;
+      border: 1px solid #110038;
+      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+      margin-bottom: 36px;
     }
   }
 }
 
-/* video view*/
+section.misGifs {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 20px;
 
-ol li {
-  list-style-type: none;
-  counter-increment: lista; 
-  position: relative;
+  input.misGifsInput {
+    margin-top: 40px;
+    height: 32px;
+    width: 99%;
+    background: #FFFAFE;
+    border: 1px solid #E6BBE2;
+    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-left: 10px;
   }
-  
-  ol li::before {
-  content: counter(lista) ")"; 
-  left: -32px;
-  position: absolute;
-  text-align: right;
-  width: 26px;
-  }
-
+}
     

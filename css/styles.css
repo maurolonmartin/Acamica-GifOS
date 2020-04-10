@@ -8,6 +8,7 @@ body {
   height: 36px;
 }
 
+/* Section Header*/
 header {
   width: 100%;
   -webkit-box-pack: flex;
@@ -22,6 +23,7 @@ header {
 
 header p {
   margin: 0;
+  padding-left: 10px;
 }
 
 header .button {
@@ -34,8 +36,13 @@ header .button {
 }
 
 header .buttonDropdown {
-  width: 36px;
-  height: 36px;
+  width: 34px;
+  height: 34px;
+}
+
+header .buttonDropdown .triangle {
+  margin-left: 17%;
+  margin-top: 31%;
 }
 
 header section.bottom {
@@ -55,6 +62,11 @@ header section.bottom {
           justify-content: space-between;
   margin: 0px 140px 0 5%;
   margin-top: 40px;
+}
+
+header section.bottom .arrow {
+  background: none;
+  border: none;
 }
 
 header section.bottom .navButtons {
@@ -169,6 +181,7 @@ header section.bottom .navButtons .arrow {
   background: none;
 }
 
+/* Fin Section Header*/
 /* Section Busqueda*/
 section.busqueda {
   width: 90%;
@@ -200,6 +213,12 @@ section.busqueda .oldWindow .searchForm {
 
 section.busqueda .oldWindow .searchForm input {
   width: 90%;
+  height: 48px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  padding-left: 10px;
 }
 
 section.busqueda .oldWindow .searchButton {
@@ -248,19 +267,19 @@ section.busqueda #autocompleteSuggestedSearch button:hover {
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
+/* Fin Section Busqueda*/
 /*Section Sugerencias*/
 section.sugerencias {
   width: 90%;
-  height: 352px;
   margin-left: 5%;
-  margin-top: 64px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 section.sugerencias .sugestions {
   margin-top: 40px;
   height: 32px;
-  width: 100%;
+  width: 99%;
   background: #FFFAFE;
   border: 1px solid #E6BBE2;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
@@ -268,7 +287,8 @@ section.sugerencias .sugestions {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  padding-left: 10px;
 }
 
 section.sugerencias .suggestionGif {
@@ -284,11 +304,18 @@ section.sugerencias .suggestionGif {
 }
 
 section.sugerencias .suggestionGif .divImgGif {
-  width: 288px;
-  height: 313px;
+  width: 100%;
+  height: 100%;
   background: #E6E6E6;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+section.sugerencias .suggestionGif .imgGif {
+  width: 98%;
+  height: 93%;
+  margin-top: 0;
+  margin-left: 1%;
 }
 
 section.sugerencias .suggestionGif .hashTagTop {
@@ -296,6 +323,9 @@ section.sugerencias .suggestionGif .hashTagTop {
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
   width: 98%;
   margin-left: 1%;
+  margin-top: 1%;
+  margin-bottom: 0;
+  color: #fff;
 }
 
 section.sugerencias .suggestionGif a {
@@ -305,20 +335,21 @@ section.sugerencias .suggestionGif a {
   background-color: #4180f6;
   color: #ffffff;
   width: 81px;
-  padding: 8px 10px;
   text-align: center;
 }
 
+/* Fin Section Sugerencias*/
 /*Section Tendencias*/
 section.tendencias {
   width: 90%;
   margin-left: 5%;
+  margin-bottom: 20px;
 }
 
 section.tendencias input.trendingsGif {
   margin-top: 40px;
   height: 32px;
-  width: 100%;
+  width: 99%;
   background: #FFFAFE;
   border: 1px solid #E6BBE2;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
@@ -326,13 +357,12 @@ section.tendencias input.trendingsGif {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+  padding-left: 10px;
 }
 
 section.tendencias div.searchGif {
-  width: 1200px;
-  margin-left: 5%;
-  margin-right: 15%;
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(0, 25%))[4];
@@ -341,28 +371,160 @@ section.tendencias div.searchGif {
   grid-row-gap: 16px;
 }
 
-section.tendencias div.searchGif .hashTagBottom {
-  display: none;
+section.tendencias div.searchGif .divImgGiftrendingGif {
+  width: 100%;
+  height: 300px;
+  position: relative;
 }
 
-section.tendencias div.searchGif .hashTagBottom:hover {
-  display: block;
+section.tendencias div.searchGif .divImgGiftrendingGif .imgGif {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+section.tendencias div.searchGif .divImgGiftrendingGif .hashTagBottom {
+  color: #fff;
+  width: 100%;
+  position: absolute;
+  opacity: 0;
+  margin-top: 0;
+  bottom: -17px;
+}
+
+section.tendencias div.searchGif .divImgGiftrendingGif:hover p {
+  opacity: 1;
   background: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 }
 
-/* video view*/
-ol li {
+section.tendencias div.divImgGif:hover {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  border: 1px black dotted;
+}
+
+/*Fin Section Tendencias*/
+/* Video view*/
+/* Section Header*/
+header .iconsSecondView {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+header .iconsSecondView .arrow {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+section.crearGifsBox {
+  width: 100%;
+  margin-top: 7%;
+}
+
+section.crearGifsBox .principalBox {
+  width: 47.5%;
+  height: 35.9%;
+  margin-left: 25%;
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+section.crearGifsBox .principalBox .innerWindow {
+  width: 99.5%;
+  margin-top: 0%;
+  margin-left: 3px;
+  height: 24px;
+}
+
+section.crearGifsBox .principalBox .innerWindow span {
+  font-size: 14px;
+  color: #FFF;
+  font-weight: 700;
+}
+
+section.crearGifsBox .principalBox .content {
+  padding: 8px 14px 13px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+section.crearGifsBox .principalBox .content .imgContainer {
+  padding: 22px 16px 0 7px;
+}
+
+section.crearGifsBox .principalBox .content .textContainer {
+  padding-top: 21px;
+  max-width: 518px;
+}
+
+section.crearGifsBox .principalBox .content .textContainer h2 {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+section.crearGifsBox .principalBox .content .textContainer p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+section.crearGifsBox .principalBox .content .textContainer ol li {
   list-style-type: none;
   counter-increment: lista;
   position: relative;
+  font-weight: 700;
 }
 
-ol li::before {
+section.crearGifsBox .principalBox .content .textContainer ol li::before {
   content: counter(lista) ")";
   left: -32px;
   position: absolute;
   text-align: right;
   width: 26px;
+}
+
+section.crearGifsBox .principalBox .createButton {
+  width: 144px;
+  height: 36px;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  margin-bottom: 36px;
+}
+
+section.misGifs {
+  width: 90%;
+  margin-left: 5%;
+  margin-bottom: 20px;
+}
+
+section.misGifs input.misGifsInput {
+  margin-top: 40px;
+  height: 32px;
+  width: 99%;
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 20px;
+  padding-left: 10px;
 }
 /*# sourceMappingURL=styles.css.map */

@@ -35,9 +35,9 @@
           <button class="dropbtn button">
             Elegir tema
           </button>
-          <button class="buttonDropdown button" onclick="show_hide()">
-            <div class="triangle"></div>
-          </button>
+          <div class="buttonDropdown button" onclick="show_hide()">
+            <p class="triangle"></p>
+          </div>
           <div style="display: none;" class="dropdown-content" id="dropdown">
             <a id="rose" onclick="changeTheme1()" class="buttonTheme">
               <span>S</span>ailor Day
@@ -57,7 +57,7 @@
   <!-- Busqueda de gifs -->
   <section class="busqueda">
     <div class="oldWindow">
-      <div for="search" class="innerWindow">Buscar</div>
+      <div class="innerWindow">Buscar</div>
       <form class="searchForm" autocomplete="off">
         <input type="text" id="searchWord" name="searchWord" class="searchWord"
         placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" autocomplete="off"

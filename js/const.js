@@ -60,7 +60,7 @@ var videoConstraints = {
         const search = title.substring(0, title.indexOf('GIF')).trim();
         const tag = search.replace(/ /g, '');
   
-        const img = `<img class="imgGif${index}" id="imgGif${index}" src=${url} alt=${title}></img>`;
+        const img = `<img class="imgGif" id="imgGif${index}" src=${url} alt=${title}></img>`;
   
         const divImgGif = `<div class="divImgGif divImgGif${section}">
           ${
@@ -74,7 +74,7 @@ var videoConstraints = {
               : ''
           }
           ${img}
-          ${showButton ? `<a class="gifButton${index}" id="onclickImgGif${index}" onclick="getSearchGif('${search}')">Ver más..</a>` : ''}
+          ${showButton ? `<a class="gifButton" id="onclickImgGif${index}" onclick="getSearchGif('${search}')">Ver más..</a>` : ''}
           ${whereShowHashTag == 'bottom' ? `<p class="gradient hashTagBottom">#${tag}</p>` : ''}
         </div>`;
   

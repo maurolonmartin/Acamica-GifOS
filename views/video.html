@@ -14,48 +14,89 @@
 </head>
 
 <body>
-  <nav class="navigation">
+  <header class="navigation">
     <div class="topHeader">
       <p>
         ¡Bienvenidos/as a Guifos.com! ——————Donde los gifs están.////// Número
-        de visitas: 12.765.803
+        de visitas: <span id="contador"></span>
       </p>
     </div>
     <section class="bottom">
-      <div>
+      <div class="iconsSecondView">
         <button class="arrow" onclick="window.location.href = '../index.html';">
           <img src="../assets/arrow.svg" alt="imagen de flecha para regresar" />
         </button>
         <img src="../assets/gifOF_logo.png" alt="logo con las letras b y d" class="bola" />
       </div>
+      <section class="navButtons">
+        <div>
+          <button class="button" onclick="window.location.href = '../views/video.html';">
+            Crear Guifos
+          </button>
+        </div>
+        <!--Botones para cambio de estilo-->
+        <div class="dropdown">
+          <button class="dropbtn button">
+            Elegir tema
+          </button>
+          <div class="buttonDropdown button" onclick="show_hide()">
+            <p class="triangle"></p>
+          </div>
+          <div style="display: none;" class="dropdown-content" id="dropdown">
+            <a id="rose" onclick="changeTheme1()" class="buttonTheme">
+              <span>S</span>ailor Day
+            </a>
+            <a id="blue" onclick="changeTheme2()" class="buttonTheme">
+              <span>S</span>ailor Night
+            </a>
+          </div>
+        </div>
+        <!--Fin cambio de botones-->
+        <div class="buttonGifos">
+          <a><span class="underlineLetter">M</span>is Gifos</a>
+        </div>
+      </section>
     </section>
-  </nav>
+  </header>
   <section class="crearGifsBox">
-    <div class="windowGuifos">
-      <p>Crear Guifos</p>
-    </div>
-    <img src="../assets/window_img.png" alt="imagen de ventana de windows xp" />
-    <h4>Aquí podrás crear tus propios guifos</h4>
-    <p>
-        Crear tu <strong>guifo</strong> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos 
-        personalizados. Los pasos para crear tu guifo son: 
-        <ol>
-          <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
-          <li>Capturar tu momento guifo</li>
-          <li>Revisar el momento</li>
-          <li>Listo para subir y compartir!</li>
-        
-      </ol>
-      ¿Quieres comenzar a crear tu guifo ahora?
-      </p>
+    <div class="principalBox">
+      <div class="innerWindow">
+        <span>Crear Guifos</span>
+      </div>
+      <div class="content">
+        <div class="imgContainer">
+          <img src="../assets/window_img.png" alt="imagen de ventana de windows xp" />
+        </div>
+        <div class="textContainer">
+          <h2>Aquí podrás crear tus propios guifos</h2>
+          <p>
+            Crear tu <strong>guifo</strong> es muy fácil, graba cualquier imagen con tu cámara y obtén guifos 
+            personalizados. Los pasos para crear tu guifo son: </p>
+            <ol>
+              <li>Dar permisos de acceso a la cámara (sólo por el tiempo de uso)</li>
+              <li>Capturar tu momento guifo</li>
+              <li>Revisar el momento</li>
+              <li>Listo para subir y compartir!</li>
+          </ol>
+          <p>
+          ¿Quieres comenzar a crear tu <strong>guifo</strong> ahora?
+          </p>
+        </div>
+      </div>
       <video id="videoRecord"></video>
-    <button onclick="startVideoRecording();">Iniciar grabación</button>
+      <button class="createButton" onclick="window.location.href = '../index.html';">Cancelar</button>
+    <button class="createButton"  onclick="startVideoRecording();">Comenzar</button>
+    </div>
+  </section>
+  <section class="misGifs">
+    <input class="misGifsInput"
+      readonly
+      placeholder="Mis guifos" />
   </section>
   <div>
     
     <button onclick="stopVideoRecording();">Detener grabación</button>
   </div>
-
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
   <script src="../js/recordRTC.js"></script>
   <script src="../js/const.js"></script>
