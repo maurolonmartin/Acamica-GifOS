@@ -60,21 +60,17 @@
       <div class="innerWindow">Buscar</div>
       <form class="searchForm" autocomplete="off">
         <input type="text" id="searchWord" name="searchWord" class="searchWord"
-        placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" autocomplete="off"
-        onkeypress="show_hide_sugestions()">
-        <button id="btnSearch" class="searchButton" onclick="getSearchGif('',event);">
+        placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" autocomplete="off">
+        <button id="btnSearchGif" class="searchButton btn-disabled" onclick="getSearchGif('',event);">
           <img src="./assets/lupa.svg" alt="lupa de busqueda">
           Buscar
-      </button>
+        </button>
       </form>
     </div>
-    <div id="autocompleteSuggestedSearch" class="autocompleteSuggestedSearch hide" style="display: none;">
-      <div class="seach" id="search"></div>
-      <button>Resultado 1</button>
-      <button>Resultado 2</button>
-      <button>Resultado 3</button>
+    <div class="autocompleteSuggestedSearch pa hide" id="autocompleteSuggestedSearch">
+      <div class="search dF fdC" id="search"></div>
     </div>
-    <div class="autocompleteHashTag hide"></div>
+    <div class="autocompleteHashTag hide" id="autocompleteHashTag"></div>
   </section>
   <section class="sugerencias">
     <input class="sugestions"

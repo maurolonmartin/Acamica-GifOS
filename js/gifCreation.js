@@ -1,31 +1,9 @@
-// const search = document.getElementById('search'); //search de auto complete
+const inputSearchGif = document.getElementById('searchWord');
+const search = document.getElementById('search'); //search de auto complete
 const trendingsGif = document.getElementById('trendingsGif'); //div padre de as tendencias
 const autocompleteSuggestedSearch = document.getElementById('autocompleteSuggestedSearch'); //funcion de autocompletar
 const autocompleteHashTag = document.getElementById('autocompleteHashTag');
 
-// document.addEventListener("DOMContentLoaded", init);
-// function init() {
-
-//     document.getElementById("btnSearch").addEventListener("click", ev => {
-
-//         ev.preventDefault();
-//         let url = `${urlSearch}search?api_kssssey=${apiKey}&q=`;
-//         let str = document.getElementById("searchWord").value.trim();
-//         url = url.concat(str);
-//         let completeUrl = url.concat(`+${limit}24`);
-//         trendingsGif.placeholder = `${str} (resultados)`;
-//         fetch(completeUrl)
-//             .then(response => response.json())
-//             .then(content => {
-//                 let data = [];
-//                 data = content.data;
-//                 drawGif(data, 'trendingGif', 'bottom', false);
-//             })
-//             .catch(err => {
-//                 console.log(err);
-//             });
-//     });
-// }
 
 const getSearchGif = async (inputSearch, e) => {
   if (e) e.preventDefault();
@@ -34,7 +12,6 @@ const getSearchGif = async (inputSearch, e) => {
   if (!inputSearch) inputSearch = searchGif.value;
 
   if (inputSearch) {
-    //searchGif.value = inputSearch;
     trendingsGif.placeholder = `${inputSearch} (resultados)`;
     const searchGif = await requestFetch(
       'GET',
@@ -62,46 +39,51 @@ const getSuggestionsAndTredingGif = async () => {
   drawGif(trendingSuggestionGif?.data.slice(4, 24), 'trendingGif', 'bottom', false);
 };
 
-// searchGif.addEventListener('keyup', () => {
-//   const wordSearch = searchGif.value;
-//   if (wordSearch.length >= 3) {
-//     getAutocompleteSuggestedSearch(wordSearch);
-//   } else {
-//     addRemoveClass('autocompleteSuggestedSearch', 'hide', 'show');
-//     addRemoveClass('autocompleteHashTag', 'hide', 'show');
-//     addRemoveClass('btnSearchGif', 'btn-disabled', 'btn-primary');
-//   }
-// });
+inputSearchGif.addEventListener('keyup', () => {
+  const wordSearch = inputSearchGif.value;
+  if (wordSearch.length >= 3) {
+    getAutocompleteSuggestedSearch(wordSearch);
+  } else {
+    addRemoveClass('autocompleteSuggestedSearch', 'hide', 'show');
+    addRemoveClass('autocompleteHashTag', 'hide', 'show');
+    addRemoveClass('btnSearchGif', 'btn-disabled', 'btn-primary');
+  }
+});
 
-// const getAutocompleteSuggestedSearch = async wordSearch => {
-//     const sugestedWords = await requestFetch(
-//       'GET',
-//       `${URL_API_DATAMUSE_WORDS}${wordSearch}&sp=${wordSearch.substr(0, 1)}*`
-//     );
+const getAutocompleteSuggestedSearch = async wordSearch => {
+    const sugestedWords = await requestFetch(
+      'GET',
+      `${urlDataMuseApi}${wordSearch}&sp=${wordSearch.substr(0, 1)}*`
+    );
   
-//     search.innerHTML = '';
-//     autocompleteHashTag.innerHTML = '';
+    search.innerHTML = '';
+    autocompleteHashTag.innerHTML = '';
   
-//     if (sugestedWords.length) {
-//       sugestedWords.slice(0, 3).forEach(element => {
-//         const word = element.word;
-//         const tag = word.trim().replace(/ /g, '');
-//         const aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${word}')">${word}</a>`;
-//         search.innerHTML += aBusqueda;
-//         const aAutocompleteHashTag = `<a>#${tag}</a>`;
-//         autocompleteHashTag.innerHTML += aAutocompleteHashTag;
-//       });
+    if (sugestedWords.length) {
+      sugestedWords.slice(0, 3).forEach(element => {
+        const word = element.word;
+        const tag = word.trim().replace(/ /g, '');
+        const aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${word}')">${word}</a>`;
+        search.innerHTML += aBusqueda;
+        const aAutocompleteHashTag = `<a onclick="getSearchGif('${word}')">#${tag}</a>`;
+        autocompleteHashTag.innerHTML += aAutocompleteHashTag;
+      });
+    } else {
+      const tag = wordSearch.trim().replace(/ /g, '');
+      const aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${wordSearch}')">${wordSearch}</a>`;
+      search.innerHTML += aBusqueda;
+      const aAutocompleteHashTag = `<a onclick="getSearchGif('${wordSearch}')">#${tag}</a>`;
+      autocompleteHashTag.innerHTML += aAutocompleteHashTag;
+    }
   
-//       addRemoveClass('autocompleteSuggestedSearch', 'show', 'hide');
-//       addRemoveClass('autocompleteHashTag', 'show', 'hide');
-//       addRemoveClass('btnSearchGif', 'btn-primary', 'btn-disabled');
-//     } else {
-//       addRemoveClass('autocompleteSuggestedSearch', 'hide', 'show');
-//       addRemoveClass('autocompleteHashTag', 'hide', 'show');
-//     }
-//   };
+    addRemoveClass('autocompleteSuggestedSearch', 'show', 'hide');
+    addRemoveClass('autocompleteHashTag', 'show', 'hide');
+    addRemoveClass('btnSearchGif', 'btn-primary', 'btn-disabled');
+  };
   
   const closeImgGif = async index => {
+    document.getElementById(`innerWindow${index}`).innerHTML = null;
+    document.getElementById(`imgGif${index}`).src = null;
     const randomGif = await requestFetch('GET', `${urlGetRandomGif}&api_key=${apiKey}`);
     if (randomGif?.data) {
       const {
@@ -112,7 +94,7 @@ const getSuggestionsAndTredingGif = async () => {
       } = randomGif.data;
       const search = title.substring(0, title.indexOf('GIF')).trim();
       const tag = search.replace(/ /g, '');
-      document.getElementById(`spanImgGif${index}`).innerHTML = `#${tag}`;
+      document.getElementById(`innerWindow${index}`).innerHTML = `#${tag}`;
       document.getElementById(`imgGif${index}`).src = url;
       document.getElementById(`onclickImgGif${index}`).setAttribute('onClick', `getSearchGif("${search}");`);
     }
@@ -120,3 +102,7 @@ const getSuggestionsAndTredingGif = async () => {
   
   getSuggestionsAndTredingGif();
   
+  const addRemoveClass = (element, classToAdd, classToRemove) => {
+    document.getElementById(element).classList.add(classToAdd);
+    document.getElementById(element).classList.remove(classToRemove);
+  };
