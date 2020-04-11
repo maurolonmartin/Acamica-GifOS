@@ -1,32 +1,56 @@
-const searchGif = document.getElementById('searchWord'); // donde se buscan los gifs
-const search = document.getElementById('search'); //search de auto complete
+// const search = document.getElementById('search'); //search de auto complete
 const trendingsGif = document.getElementById('trendingsGif'); //div padre de as tendencias
 const autocompleteSuggestedSearch = document.getElementById('autocompleteSuggestedSearch'); //funcion de autocompletar
 const autocompleteHashTag = document.getElementById('autocompleteHashTag');
 
-document.addEventListener("DOMContentLoaded", init);
-function init() {
+// document.addEventListener("DOMContentLoaded", init);
+// function init() {
 
-    document.getElementById("btnSearch").addEventListener("click", ev => {
+//     document.getElementById("btnSearch").addEventListener("click", ev => {
 
-        ev.preventDefault();
-        let url = `${urlSearch}search?api_key=${apiKey}&q=`;
-        let str = document.getElementById("searchWord").value.trim();
-        url = url.concat(str);
-        let completeUrl = url.concat(`+${limit}24`);
-        trendingsGif.placeholder = `${str} (resultados)`;
-        fetch(completeUrl)
-            .then(response => response.json())
-            .then(content => {
-                let data = [];
-                data = content.data;
-                drawGif(data, 'trendingGif', 'bottom', false);
-            })
-            .catch(err => {
-                console.log(err);
-            });
-    });
-}
+//         ev.preventDefault();
+//         let url = `${urlSearch}search?api_kssssey=${apiKey}&q=`;
+//         let str = document.getElementById("searchWord").value.trim();
+//         url = url.concat(str);
+//         let completeUrl = url.concat(`+${limit}24`);
+//         trendingsGif.placeholder = `${str} (resultados)`;
+//         fetch(completeUrl)
+//             .then(response => response.json())
+//             .then(content => {
+//                 let data = [];
+//                 data = content.data;
+//                 drawGif(data, 'trendingGif', 'bottom', false);
+//             })
+//             .catch(err => {
+//                 console.log(err);
+//             });
+//     });
+// }
+
+const getSearchGif = async (inputSearch, e) => {
+  if (e) e.preventDefault();
+
+  let searchGif = document.getElementById('searchWord'); // donde se buscan los gifs
+  if (!inputSearch) inputSearch = searchGif.value;
+
+  if (inputSearch) {
+    //searchGif.value = inputSearch;
+    trendingsGif.placeholder = `${inputSearch} (resultados)`;
+    const searchGif = await requestFetch(
+      'GET',
+      `${urlSearch}${inputSearch}&api_key=${apiKey}${limit}24`
+    );
+    drawGif(searchGif?.data, 'trendingGif', 'bottom', false);
+
+    if (inputSearch && autocompleteSuggestedSearch.classList.contains('show')) {
+      addRemoveClass('autocompleteSuggestedSearch', 'hide', 'show');
+    }
+  } else {
+    trendingsGif.placeholder = 'Tendenciassss';
+    getSuggestionsAndTredingGif();
+  }
+};
+
 
 const getSuggestionsAndTredingGif = async () => {
   const trendingSuggestionGif = await requestFetch(
@@ -38,16 +62,16 @@ const getSuggestionsAndTredingGif = async () => {
   drawGif(trendingSuggestionGif?.data.slice(4, 24), 'trendingGif', 'bottom', false);
 };
 
-searchGif.addEventListener('keyup', () => {
-  const wordSearch = searchGif.value;
-  if (wordSearch.length >= 3) {
-    getAutocompleteSuggestedSearch(wordSearch);
-  } else {
-    addRemoveClass('autocompleteSuggestedSearch', 'hide', 'show');
-    addRemoveClass('autocompleteHashTag', 'hide', 'show');
-    addRemoveClass('btnSearchGif', 'btn-disabled', 'btn-primary');
-  }
-});
+// searchGif.addEventListener('keyup', () => {
+//   const wordSearch = searchGif.value;
+//   if (wordSearch.length >= 3) {
+//     getAutocompleteSuggestedSearch(wordSearch);
+//   } else {
+//     addRemoveClass('autocompleteSuggestedSearch', 'hide', 'show');
+//     addRemoveClass('autocompleteHashTag', 'hide', 'show');
+//     addRemoveClass('btnSearchGif', 'btn-disabled', 'btn-primary');
+//   }
+// });
 
 // const getAutocompleteSuggestedSearch = async wordSearch => {
 //     const sugestedWords = await requestFetch(

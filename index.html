@@ -26,7 +26,7 @@
       </div>
       <section class="navButtons">
         <div>
-          <button class="button" onclick="window.location.href = '../views/video.html';">
+          <button class="button" onclick="window.location.href = './video.html';">
             Crear Guifos
           </button>
         </div>
@@ -62,14 +62,14 @@
         <input type="text" id="searchWord" name="searchWord" class="searchWord"
         placeholder="Busca gifs, hashtags, temas, busca lo que quieras…" autocomplete="off"
         onkeypress="show_hide_sugestions()">
-        <button id="btnSearch" class="searchButton" >
+        <button id="btnSearch" class="searchButton" onclick="getSearchGif('',event);">
           <img src="./assets/lupa.svg" alt="lupa de busqueda">
           Buscar
       </button>
       </form>
     </div>
     <div id="autocompleteSuggestedSearch" class="autocompleteSuggestedSearch hide" style="display: none;">
-      <div class="seach"></div>
+      <div class="seach" id="search"></div>
       <button>Resultado 1</button>
       <button>Resultado 2</button>
       <button>Resultado 3</button>

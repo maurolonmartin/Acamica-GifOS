@@ -1,4 +1,6 @@
 var recorder;
+var stream;
+var video;
 
 // Taken from https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia and https://recordrtc.org/
 function startVideoRecording() {
@@ -7,6 +9,7 @@ function startVideoRecording() {
   navigator.mediaDevices
     .getUserMedia(videoConstraints)
     .then(async function(stream) {
+      this.stream = stream;
       showVideoRecording(stream);
 
       recorder = RecordRTC(stream, {
@@ -25,8 +28,6 @@ function startVideoRecording() {
     .catch(function(err) {
       console.log(err.name + ": " + err.message);
     });
-    
-  console.log("Paula", navigator.mediaDevices.getUserMedia); 
 }
 
 function validateAndPrepareNavigator() {
@@ -34,7 +35,6 @@ function validateAndPrepareNavigator() {
   if (navigator.mediaDevices === undefined) {
     navigator.mediaDevices = {};
   }
-  console.log("Paula2", navigator.mediaDevices.getUserMedia); 
   // Some browsers partially implement mediaDevices. We can't just assign an object
   // with getUserMedia as it would overwrite existing properties.
   // Here, we will just add the getUserMedia property if it's missing.
@@ -61,7 +61,7 @@ function validateAndPrepareNavigator() {
 }
 
 function showVideoRecording(stream) {
-  var video = document.getElementById("videoRecord");
+  video = document.getElementById("videoRecord");
   // Older browsers may not have srcObject
   if ("srcObject" in video) {
     video.srcObject = stream;
@@ -72,12 +72,14 @@ function showVideoRecording(stream) {
   video.onloadedmetadata = function(e) {
     video.play();
   };
-  console.log("Paula3", navigator.mediaDevices.getUserMedia); 
 }
 
 function stopVideoRecording() {
   recorder.stopRecording(function() {
+    const tracks = stream.getTracks();
     let blob = recorder.getBlob();
     invokeSaveAsDialog(blob);
+    tracks.forEach(track => track.stop());
+    
   });
 }
