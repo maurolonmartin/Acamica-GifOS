@@ -1,4 +1,4 @@
-if (location.hostname.toLocaleLowerCase() == "gifos-acamica.firebaseapp.com/") {
+if (location.hostname.toLocaleLowerCase() == "gifos-acamica.firebaseapp.com") {
     var firebaseConfig = {
         apiKey: "AIzaSyCT7aNn-6jAEM7rLA4UK4Kw4gxvmb3HY-c",
         authDomain: "hitcounter-f9f71.firebaseapp.com",
