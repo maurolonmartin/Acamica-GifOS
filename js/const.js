@@ -7,7 +7,7 @@ const urlUpload = 'https://upload.giphy.com/v1/gifs';
 const urlGetGifById = 'https://api.giphy.com/v1/gifs?ids=';
 const urlGetRandomGif = 'https://api.giphy.com/v1/gifs/random?rating=G';
 const limit = '&limit=';
-const urlDataMuseApi = 'https://api.datamuse.com/words?v=es&ml=';
+const urlAutoComplete = 'https://api.giphy.com/v1/gifs/search/tags?';
 
 var videoConstraints = {
     audio: false,

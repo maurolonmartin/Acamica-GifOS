@@ -50,30 +50,36 @@ inputSearchGif.addEventListener('keyup', () => {
   }
 });
 
-const getAutocompleteSuggestedSearch = async wordSearch => {
+  const getAutocompleteSuggestedSearch = async (wordSearch) => {
     const sugestedWords = await requestFetch(
       'GET',
-      `${urlDataMuseApi}${wordSearch}&sp=${wordSearch.substr(0, 1)}*`
+      `${urlAutoComplete}api_key=${apiKey}&q=${wordSearch}`
     );
-  
-    search.innerHTML = '';
+      console.log(sugestedWords);
+      
+    const idAutocompleteSuggestedOptions = document.getElementById('search');
+    idAutocompleteSuggestedOptions.innerHTML = '';
     autocompleteHashTag.innerHTML = '';
   
-    if (sugestedWords.length) {
-      sugestedWords.slice(0, 3).forEach(element => {
-        const word = element.word;
-        const tag = word.trim().replace(/ /g, '');
-        const aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${word}')">${word}</a>`;
-        search.innerHTML += aBusqueda;
-        const aAutocompleteHashTag = `<a onclick="getSearchGif('${word}')">#${tag}</a>`;
+    let tag = wordSearch.trim().replace(/ /g, '');
+    // Suggested autocomplete select
+    let aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${wordSearch}')">${wordSearch}</a>`;
+    idAutocompleteSuggestedOptions.innerHTML += aBusqueda;
+    // Suggested autocomplete tag
+    let aAutocompleteHashTag = `<a onclick="getSearchGif('${wordSearch}')">#${tag}</a>`;
+    autocompleteHashTag.innerHTML += aAutocompleteHashTag;
+  
+    if (sugestedWords.data.length) {
+      sugestedWords.data.slice(0, 6).forEach((element) => {
+        const word = element.name;
+        tag = word.trim().replace(/ /g, '');
+        // Suggested autocomplete select
+        aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${word}')">${word}</a>`;
+        idAutocompleteSuggestedOptions.innerHTML += aBusqueda;
+        // Suggested autocomplete tag
+        aAutocompleteHashTag = `<a onclick="getSearchGif('${word}')">#${tag}</a>`;
         autocompleteHashTag.innerHTML += aAutocompleteHashTag;
       });
-    } else {
-      const tag = wordSearch.trim().replace(/ /g, '');
-      const aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${wordSearch}')">${wordSearch}</a>`;
-      search.innerHTML += aBusqueda;
-      const aAutocompleteHashTag = `<a onclick="getSearchGif('${wordSearch}')">#${tag}</a>`;
-      autocompleteHashTag.innerHTML += aAutocompleteHashTag;
     }
   
     addRemoveClass('autocompleteSuggestedSearch', 'show', 'hide');

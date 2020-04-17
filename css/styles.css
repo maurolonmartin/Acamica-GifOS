@@ -295,6 +295,7 @@ section.busqueda .autocompleteHashTag a {
   border: 1px solid #4c2f99;
   -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
   box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
+  cursor: pointer;
 }
 
 section.busqueda .hide {
@@ -475,23 +476,23 @@ section.tendencias div.searchGif .divImgGiftrendingGif .hashTagBottom {
 }
 
 section.tendencias div.searchGif .divImgGiftrendingGif:hover {
-  width: 102%;
+  width: 100%;
 }
 
 section.tendencias div.searchGif .divImgGiftrendingGif:hover .imgGif {
-  width: 98%;
+  width: 98.5%;
   height: 97%;
-  margin-top: 1%;
-  margin-left: 1%;
-  margin-bottom: 1%;
+  margin-top: 2px;
+  margin-left: 4px;
+  margin-bottom: 2px;
   border: 1px #110038 dotted;
 }
 
 section.tendencias div.searchGif .divImgGiftrendingGif:hover p {
   opacity: 1;
-  width: 98%;
+  width: 99%;
   bottom: -12px;
-  margin-left: 1.1%;
+  margin-left: 2px;
 }
 
 section.tendencias div.searchGif .divImgGiftrendingGif:nth-child(5n+5) {
