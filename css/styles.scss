@@ -22,6 +22,16 @@ header {
     height: 36px;
     flex-direction: row;
     font-family: $fuentePrincipal;
+
+    &:hover {
+      outline: 1px dotted #110038;
+      outline-offset: -4px;
+    }
+
+    &:active {
+      outline: 1px dotted #110038;
+          outline-offset: -4px;
+    }
   }
 
   .buttonDropdown {
@@ -51,7 +61,7 @@ header {
     .navButtons {
       display: flex;
       justify-content: space-between;
-      width: 420px;
+      width: 430px;
 
       /* Style The Dropdown Button */
       .dropbtn {
@@ -126,20 +136,16 @@ header {
       }
 
       .buttonGifos {
-        text-align: center;
         padding-top: 10px;
+        width: 95px;
+        height: 25px;
+
       }
     
       .underlineLetter {
         text-decoration: underline;
       }
     
-      .buttonGifos:hover {
-        width: 95px;
-        height: 25px;
-        border: dotted 2px #110038;;
-      }
-
       .arrow {
         border: none;
         background: none;
@@ -161,7 +167,6 @@ section.busqueda {
     height: 99px;
 
     .innerWindow{
-      background-image: $gradientPrincipal;
       width: 100%;
       color: white;
       }
@@ -177,55 +182,48 @@ section.busqueda {
         width: 90%;
         height: 48px;
         background: #FFFFFF;
-        border: 1px solid #979797;
-        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
         padding-left: 10px;
       }
     }
   
     .btn-disabled {
+      font-family: $fuentePrincipal;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 18px;
       margin-left: 10px;
       width: 102px;
       height: 36px;
       text-decoration: none;
       padding: 0px;
-      background-color: #e6e6e6;
-      color: #b4b4b4;
-      border: 1px solid #808080;
-      -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
-      box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
       pointer-events: none;
     }
 
     .btn-primary {
+      font-family: $fuentePrincipal;
+      font-size: 16px;
+      letter-spacing: 0;
+      line-height: 18px;
       margin-left: 10px;
       width: 102px;
       height: 36px;
       text-decoration: none;
       padding: 0px;
-      background-color: #f7c9f3;
-      color: #110038;
-      border: 1px solid #110038;
-      -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-              box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
       -ms-flex-pack: distribute;
-          justify-content: space-around;
+      justify-content: space-around;
       -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
+      -ms-flex-align: center;
+      align-items: center;
     }
   }
 
   .autocompleteSuggestedSearch {
     height: auto;
-    background-color: #e6e6e6;
     z-index: 1;
     width: 90.8%;
-    -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-    box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
     position: relative;
 
     .search {
@@ -234,19 +232,12 @@ section.busqueda {
       display: flex;
       flex-direction: column;
       position: absolute;
-      -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-      box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-      background-color: #e6e6e6;
 
       .aBusqueda {
         width: 98%;
         padding: 6px 0px 0px 6px;
         height: 28px;
         margin-bottom: 11px;
-        background: #f0f0f0;
-        border: 1px solid #808080;
-        -webkit-box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
-        box-shadow: inset -2px -2px 0 0 #b4b4b4, inset 2px 2px 0 0 #ffffff;
         cursor: pointer;
       }
     }
@@ -308,11 +299,8 @@ section.sugerencias {
     .divImgGif {
       width: 100%;
       height: 400px;
-      background: #E6E6E6;
-      box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 
       .hashTagTop {
-        background-image: $gradientPrincipal;
         width: 98%;
         margin-left: 1%;
         margin-top: 1%;
@@ -354,6 +342,17 @@ section.sugerencias {
         align-items: center;
         cursor: pointer;
         padding: 8px 10px;
+
+        &:hover {    
+          outline: 1px dotted #110038;
+          outline-offset: -4px;
+        }
+        
+      }
+
+      &:hover {    
+        outline: 1px dotted #110038;
+        outline-offset: -4px;
       }
     }
   }
@@ -390,6 +389,12 @@ section.tendencias {
       height: 300px;
       position: relative;
 
+      &:hover {
+        width: 103%;
+        background:#E6E6E6;
+        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+      }
+
       .imgGif {
         width: 100%;
         height: 100%;
@@ -407,18 +412,29 @@ section.tendencias {
       }
 
       &:hover {
-        p{
+        width: 102%;
+        
+        .imgGif {
+          width: 98%;
+          height: 97%;
+          margin-top: 1%;
+          margin-left: 1%;
+          margin-bottom: 1%;
+          border: 1px #110038 dotted;
+        }
+
+        p {
           opacity: 1;
-        background: $gradientPrincipal;
+          width: 98%;
+          bottom: -12px;
+          margin-left: 1.1%;
         }
       }
+      
+      &:nth-child(5n+5){
+        grid-column: span 2;
+      }
     }
-  }
-
-  div.divImgGif:hover {
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-    border: 1px black dotted;
   }
 }
 /*Fin Section Tendencias*/
@@ -454,6 +470,7 @@ section.crearGifsBox {
       margin-top: 0%;
       margin-left: 3px;
       height: 24px;
+      color: white;
 
       span {
         font-size: 14px;

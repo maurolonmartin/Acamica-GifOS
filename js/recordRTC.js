@@ -2,7 +2,7 @@ var recorder;
 var stream;
 var video;
 
-// Taken from https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia and https://recordrtc.org/
+
 function startVideoRecording() {
   validateAndPrepareNavigator();
 

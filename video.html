@@ -85,8 +85,44 @@
       </div>
       <video id="videoRecord"></video>
       <button class="createButton" onclick="window.location.href = '../index.html';">Cancelar</button>
-    <button class="createButton"  onclick="startVideoRecording();">Comenzar</button>
+      <button class="createButton"  onclick="startVideoRecording()">Comenzar</button>
     </div>
+    <div class="contentCheckBeforeStart hide" id="contentCheckBeforeStart">
+      <video id="videoRecord" class="videoRecord"></video>
+      <img id="gifPreview" class="hide" />
+      <div class="capture">
+        <div class="captureAndPreviewGif hide" id="captureAndPreviewGif">
+          <input type="text" id="chronometerGif" name="chronometerGif" class="chronometerGif"
+            placeholder="00:00:00:00" readonly />
+          <span id="progressBarGif" onclick="progressBarGif();" class="progressBarGif hide">Progress Bar</span>
+          <button id="repeatCapture" onclick="repeatCapture();" class="hide">Repetir captura</button>
+          <button id="uploadGif" onclick="uploadGif();" class="hide">Subir Guifo</button>
+          <button id="readyGif" onclick="readyGif();" class="hide">Listo</button>
+        </div>
+
+        <div class="captureGif" id="captureGif">
+          <button id="captureGif" onclick="captureGif();" class="">Capturar</button>
+          <button id="cancelGif" onclick="cancelGif();" class="hide">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="contentUploadingGif hide" id="contentUploadingGif">
+      <p>Estamos subiendo tu guifo</p>
+      <div class="btns-uploading-gif">
+        <a href="" class="cancelButton">Cancelar</a>
+      </div>
+    </div>
+
+    <div class="successfullyUploadedGif hide" id="successfullyUploadedGif">
+      <p>Guifo Subido Con Éxito</p>
+      <div class="btns-uploading-gif">
+        <a href="" class="cancelButton">Copiar enlace guifo</a>
+        <a href="" class="cancelButton">Descargar gifo</a>
+        <a href="" class="cancelButton">Listo</a>
+      </div>
+    </div>
+
   </section>
   <section class="misGifs">
     <input class="misGifsInput"
@@ -97,9 +133,11 @@
     
     <button onclick="stopVideoRecording();">Detener grabación</button>
   </div>
-  <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-  <script src="../js/api.js"></script>
   <script src="../js/recordRTC.js"></script>
+  <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+  
+  <script src="../js/api.js"></script>
+  
   <script src="../js/const.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
