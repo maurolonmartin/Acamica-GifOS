@@ -679,17 +679,15 @@ section.crearGifsBox .videoPreview .innerWindow a {
 }
 
 section.crearGifsBox .videoPreview .videoWindow {
-  width: 838px;
+  width: 836px;
   height: 440px;
   margin: 10px 0 10px 10px;
-  position: relative;
 }
 
 section.crearGifsBox .videoPreview .videoWindow .videoRecord {
   -o-object-fit: fill;
      object-fit: fill;
-  position: absolute;
-  padding: 2px 0 1px 2px;
+  padding: 2px;
 }
 
 section.crearGifsBox .capture {
