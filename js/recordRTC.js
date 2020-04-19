@@ -1,18 +1,16 @@
 var recorder;
 var stream;
-// var video;
+var video;
 
 function startVideoRecording() {
 
   addRemoveClass('principalBox', 'hide', 'show');
   addRemoveClass('videoPreview', 'show', 'hide');
+  addRemoveClass('videoRecord', 'show', 'hide');
 
   validateAndPrepareNavigator();
 
-  
-
-  navigator.mediaDevices
-    .getUserMedia(videoConstraints)
+  navigator.mediaDevices.getUserMedia(videoConstraints)
     .then(async function(stream) {
       this.stream = stream;
       showVideoRecording(stream);
@@ -21,18 +19,26 @@ function startVideoRecording() {
         type: "gif",
         frameRate: 1,
         quality: 10,
-        width: 360,
-        hidden: 240,
+        width: 832,
+        hidden: 434,
 
         onGifRecordingStarted: function() {
           console.log("started");
         }
       });
-      recorder.startRecording();
     })
     .catch(function(err) {
       console.log(err.name + ": " + err.message);
     });
+}
+
+function captureGif(){
+  addRemoveClass('captureGif', 'hide', 'show');
+  addRemoveClass('camaraSvg', 'hide', 'show');
+  addRemoveClass('chronometerGif', 'show2', 'hide');
+  addRemoveClass('recordingSvg', 'show2', 'hide');
+  addRemoveClass('readyGif', 'show', 'hide');
+  recorder.startRecording();
 }
 
 function validateAndPrepareNavigator() {
@@ -88,3 +94,4 @@ function stopVideoRecording() {
     
   });
 }
+

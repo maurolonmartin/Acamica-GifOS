@@ -8,6 +8,20 @@ body {
   height: 36px;
 }
 
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.show2 {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
 /* Section Header*/
 header {
   width: 100%;
@@ -298,14 +312,6 @@ section.busqueda .autocompleteHashTag a {
   cursor: pointer;
 }
 
-section.busqueda .hide {
-  display: none !important;
-}
-
-section.busqueda .show {
-  display: block !important;
-}
-
 /* Fin Section Busqueda*/
 /*Section Sugerencias*/
 section.sugerencias {
@@ -556,13 +562,14 @@ header .iconsSecondView .arrow {
 
 section.crearGifsBox {
   width: 100%;
-  margin-top: 7%;
+  margin-top: -2%;
 }
 
 section.crearGifsBox .principalBox {
   width: 684px;
   height: 386px;
   margin: 75px auto 153px;
+  top: -10px;
 }
 
 section.crearGifsBox .principalBox .innerWindow {
@@ -577,6 +584,7 @@ section.crearGifsBox .principalBox .innerWindow span {
   font-size: 14px;
   color: #FFF;
   font-weight: 700;
+  margin-left: 10px;
 }
 
 section.crearGifsBox .principalBox .content {
@@ -650,6 +658,76 @@ section.crearGifsBox .videoPreview {
   width: 860px;
   height: 548px;
   margin: 75px auto 153px;
+}
+
+section.crearGifsBox .videoPreview .innerWindow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.crearGifsBox .videoPreview .innerWindow span {
+  margin-left: 10px;
+}
+
+section.crearGifsBox .videoPreview .innerWindow a {
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+section.crearGifsBox .videoPreview .videoWindow {
+  width: 838px;
+  height: 440px;
+  margin: 10px 0 10px 10px;
+  position: relative;
+}
+
+section.crearGifsBox .videoPreview .videoWindow .videoRecord {
+  -o-object-fit: fill;
+     object-fit: fill;
+  position: absolute;
+  padding: 2px 0 1px 2px;
+}
+
+section.crearGifsBox .capture {
+  font-family: "Chakra Petch", sans-serif;
+  width: 100%;
+}
+
+section.crearGifsBox .capture .captureButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-right: 20px;
+}
+
+section.crearGifsBox .capture .captureButtons .camaraSvg {
+  width: 34px;
+  height: 34px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.crearGifsBox .capture .captureButtons .button {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+section.crearGifsBox .capture .captureButtons .chronometerGif {
+  margin-left: 10px;
+  margin-right: 57%;
 }
 
 section.misGifs {

@@ -12,7 +12,9 @@ const urlAutoComplete = 'https://api.giphy.com/v1/gifs/search/tags?';
 var videoConstraints = {
     audio: false,
     video: {
-      height: { max: 480 }
+      width: { exact: 832 },
+        height: { exact: 437 }
+
     }
   };
 

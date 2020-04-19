@@ -5,6 +5,18 @@
 //   font-family: $fuentePrincipal;
 // }
 
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.show2 {
+  display: inline-flex;;
+}
+
 /* Section Header*/
 header {
   width: 100%;
@@ -258,14 +270,6 @@ section.busqueda {
         cursor: pointer;
     }
   }
-
-  .hide {
-    display: none !important;
-  }
-  
-  .show {
-    display: block !important;
-  }
 }
 /* Fin Section Busqueda*/
 
@@ -481,12 +485,13 @@ header {
   
 section.crearGifsBox {
   width: 100%;
-  margin-top: 7%;
+  margin-top: -2%;
 
   .principalBox {
     width: 684px;
     height: 386px;
     margin: 75px auto 153px;
+    top: -10px;
     
 
     .innerWindow {
@@ -500,6 +505,7 @@ section.crearGifsBox {
         font-size: 14px;
         color: #FFF;
         font-weight: 700;
+        margin-left: 10px;
       }
     }
 
@@ -568,6 +574,62 @@ section.crearGifsBox {
     width: 860px;
     height: 548px;
     margin: 75px auto 153px;
+
+    .innerWindow {
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        margin-left: 10px;
+      }
+
+      a {
+        margin-right: 10px;
+        margin-top: 3px;
+      }
+    }
+
+    .videoWindow {
+      width: 838px;
+      height: 440px;
+      margin: 10px 0 10px 10px;
+      position: relative;
+
+      .videoRecord {
+        object-fit: fill;
+        position: absolute;
+        padding: 2px 0 1px 2px;
+      }
+    }
+
+  }
+
+  .capture {
+    font-family: $fuentePrincipal;
+    width: 100%;
+
+    .captureButtons {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 20px;
+
+      .camaraSvg {
+        width: 34px;
+        height: 34px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .button {
+        font-family: $fuentePrincipal;
+      }
+
+      .chronometerGif {
+        margin-left: 10px;
+        margin-right: 57%;
+      }
+    }
   }
 }
 
