@@ -1,10 +1,15 @@
 var recorder;
 var stream;
-var video;
-
+// var video;
 
 function startVideoRecording() {
+
+  addRemoveClass('principalBox', 'hide', 'show');
+  addRemoveClass('videoPreview', 'show', 'hide');
+
   validateAndPrepareNavigator();
+
+  
 
   navigator.mediaDevices
     .getUserMedia(videoConstraints)

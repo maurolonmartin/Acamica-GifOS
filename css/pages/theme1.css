@@ -9,8 +9,8 @@ body {
   border-bottom: 1px solid black;
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-  -webkit-box-shadow: 0 1px 0 0 #110038 100%;
-          box-shadow: 0 1px 0 0 #110038 100%;
+  -webkit-box-shadow: 0 1px 0 0 #110038;
+          box-shadow: 0 1px 0 0 #110038;
 }
 
 .dropdown-content {
@@ -27,7 +27,7 @@ body {
 }
 
 .buttonTheme {
-  color: #110038 100%;
+  color: #110038;
 }
 
 .buttonTheme:hover {
@@ -35,6 +35,25 @@ body {
   border: 1px solid #CCA6C9;
   -webkit-box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #E6DCE4, inset 1px 1px 0 0 #FFFFFF;
+}
+
+.button {
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+}
+
+.button:hover {
+  background: #E6BBE2;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .triangle {
@@ -48,39 +67,20 @@ body {
 }
 
 .dropdown-content a {
-  color: #110038 100%;
+  color: #110038;
   text-decoration: none;
-}
-
-.button {
-  background: #F7C9F3;
-  border: 1px solid #110038 100%;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-  font-size: 16px;
-  color: #110038 100%;
-  letter-spacing: 0;
-  text-align: center;
-  line-height: 18px;
-}
-
-.button:hover {
-  background: #E6BBE2;
-  border: 1px solid #110038 100%;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 .buttonGifos {
   font-family: "Chakra Petch", sans-serif;
   font-size: 16px;
-  color: #110038 100%;
+  color: #110038;
   letter-spacing: 0;
   line-height: 18px;
 }
 
 .buttonGifos:hover {
-  border: dotted 1px #110038 100%;
+  border: dotted 1px #110038;
 }
 
 .innerWindow {
@@ -145,5 +145,24 @@ input {
 .hashTagBottom {
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+}
+
+section.crearGifsBox .principalBox {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+section.crearGifsBox .videoPreview {
+  background: #E6E6E6;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+section.misGifs input.misGifsInput {
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
 }
 /*# sourceMappingURL=theme1.css.map */

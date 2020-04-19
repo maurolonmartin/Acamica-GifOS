@@ -53,7 +53,7 @@ header .buttonDropdown {
 
 header .buttonDropdown .triangle {
   margin-left: 17%;
-  margin-top: 31%;
+  margin-top: 36%;
 }
 
 header section.bottom {
@@ -299,11 +299,11 @@ section.busqueda .autocompleteHashTag a {
 }
 
 section.busqueda .hide {
-  display: none;
+  display: none !important;
 }
 
 section.busqueda .show {
-  display: block;
+  display: block !important;
 }
 
 /* Fin Section Busqueda*/
@@ -413,6 +413,40 @@ section.sugerencias .suggestionGif .divImgGif:hover {
 }
 
 /* Fin Section Sugerencias*/
+/* Loader */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 12px;
+  height: 12px;
+  -webkit-animation: spin 2s linear infinite;
+  /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+/*Fin Section loader*/
 /*Section Tendencias*/
 section.tendencias {
   width: 90%;
@@ -526,12 +560,9 @@ section.crearGifsBox {
 }
 
 section.crearGifsBox .principalBox {
-  width: 47.5%;
-  height: 35.9%;
-  margin-left: 25%;
-  background: #E6E6E6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+  width: 684px;
+  height: 386px;
+  margin: 75px auto 153px;
 }
 
 section.crearGifsBox .principalBox .innerWindow {
@@ -590,15 +621,35 @@ section.crearGifsBox .principalBox .content .textContainer ol li::before {
   width: 26px;
 }
 
-section.crearGifsBox .principalBox .createButton {
+section.crearGifsBox .principalBox .recordButtons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+section.crearGifsBox .principalBox .recordButtons .createButton {
   width: 144px;
   height: 36px;
   background: #FFF4FD;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-  margin-bottom: 36px;
   font-family: "Chakra Petch", sans-serif;
+  margin-right: 3%;
+}
+
+section.crearGifsBox .principalBox .recordButtons .createButton:hover {
+  background: #F7C9F3;
+}
+
+section.crearGifsBox .videoPreview {
+  width: 860px;
+  height: 548px;
+  margin: 75px auto 153px;
 }
 
 section.misGifs {
@@ -611,10 +662,6 @@ section.misGifs input.misGifsInput {
   margin-top: 40px;
   height: 32px;
   width: 99%;
-  background: #FFFAFE;
-  border: 1px solid #E6BBE2;
-  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
-          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;

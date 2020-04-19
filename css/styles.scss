@@ -40,7 +40,7 @@ header {
 
     .triangle {
       margin-left: 17%;
-      margin-top: 31%;
+      margin-top: 36%;
     }
   }
 
@@ -260,11 +260,11 @@ section.busqueda {
   }
 
   .hide {
-    display: none;
+    display: none !important;
   }
   
   .show {
-    display: block;
+    display: block !important;
   }
 }
 /* Fin Section Busqueda*/
@@ -359,6 +359,30 @@ section.sugerencias {
   }
 }
 /* Fin Section Sugerencias*/
+
+/* Loader */
+.loader {
+  border: 6px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 6px solid #3498db;
+  width: 12px;
+  height: 12px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*Fin Section loader*/
+
 
 /*Section Tendencias*/
 section.tendencias {
@@ -460,11 +484,10 @@ section.crearGifsBox {
   margin-top: 7%;
 
   .principalBox {
-    width: 47.5%;
-    height: 35.9%;
-    margin-left: 25%;
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    width: 684px;
+    height: 386px;
+    margin: 75px auto 153px;
+    
 
     .innerWindow {
       width: 99.5%;
@@ -520,15 +543,31 @@ section.crearGifsBox {
       }
     }
 
-    .createButton {
-      width: 144px;
-      height: 36px;
-      background: #FFF4FD;
-      border: 1px solid #110038;
-      box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
-      margin-bottom: 36px;
-      font-family: $fuentePrincipal;
+    .recordButtons {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+
+      .createButton {
+        width: 144px;
+        height: 36px;
+        background: #FFF4FD;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+        font-family: $fuentePrincipal;
+        margin-right: 3%;
+
+        &:hover {
+          background: #F7C9F3;
+        }
+      }
     }
+  }
+
+  .videoPreview {
+    width: 860px;
+    height: 548px;
+    margin: 75px auto 153px;
   }
 }
 
@@ -541,9 +580,6 @@ section.misGifs {
     margin-top: 40px;
     height: 32px;
     width: 99%;
-    background: #FFFAFE;
-    border: 1px solid #E6BBE2;
-    box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
     align-items: center;
     margin-bottom: 20px;
     padding-left: 10px;

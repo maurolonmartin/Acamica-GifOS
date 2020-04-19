@@ -85,3 +85,7 @@ const drawGif = (images, section, whereShowHashTag, showButton) => {
   }
 };
 
+const addRemoveClass = (element, classToAdd, classToRemove) => {
+  document.getElementById(element).classList.add(classToAdd);
+  document.getElementById(element).classList.remove(classToRemove);
+};

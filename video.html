@@ -59,7 +59,7 @@
     </section>
   </header>
   <section class="crearGifsBox">
-    <div class="principalBox">
+    <div class="principalBox show" id="principalBox">
       <div class="innerWindow">
         <span>Crear Guifos</span>
       </div>
@@ -83,18 +83,21 @@
           </p>
         </div>
       </div>
-      <video id="videoRecord"></video>
-      <button class="createButton" onclick="window.location.href = '../index.html';">Cancelar</button>
-      <button class="createButton"  onclick="startVideoRecording()">Comenzar</button>
+      <div class="recordButtons">
+        <button class="createButton" onclick="window.location.href = '../index.html';">Cancelar</button>
+        <button class="createButton start-creation" onclick="startVideoRecording()">Comenzar</button>
+         <!---->
+      </div>
+      
     </div>
-    <div class="contentCheckBeforeStart hide" id="contentCheckBeforeStart">
+    <div class="videoPreview hide" id="videoPreview">
       <video id="videoRecord" class="videoRecord"></video>
       <img id="gifPreview" class="hide" />
       <div class="capture">
-        <div class="captureAndPreviewGif hide" id="captureAndPreviewGif">
+        <div class="captureAndPreviewGif " id="captureAndPreviewGif">
           <input type="text" id="chronometerGif" name="chronometerGif" class="chronometerGif"
             placeholder="00:00:00:00" readonly />
-          <span id="progressBarGif" onclick="progressBarGif();" class="progressBarGif hide">Progress Bar</span>
+          <span id="progressBarGif" onclick="progressBarGif();" class="progressBarGif ">Progress Bar</span>
           <button id="repeatCapture" onclick="repeatCapture();" class="hide">Repetir captura</button>
           <button id="uploadGif" onclick="uploadGif();" class="hide">Subir Guifo</button>
           <button id="readyGif" onclick="readyGif();" class="hide">Listo</button>
@@ -107,7 +110,7 @@
       </div>
     </div>
 
-    <div class="contentUploadingGif hide" id="contentUploadingGif">
+    <div class="contentUploadingGif " id="contentUploadingGif">
       <p>Estamos subiendo tu guifo</p>
       <div class="btns-uploading-gif">
         <a href="" class="cancelButton">Cancelar</a>
@@ -136,9 +139,8 @@
   <script src="../js/recordRTC.js"></script>
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
   
-  <script src="../js/api.js"></script>
-  
-  <script src="../js/const.js"></script>
+  <script src="./js/const.js"></script>
+  <script src="./js/api.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
 

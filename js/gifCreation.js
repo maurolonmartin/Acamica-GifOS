@@ -50,65 +50,62 @@ inputSearchGif.addEventListener('keyup', () => {
   }
 });
 
-  const getAutocompleteSuggestedSearch = async (wordSearch) => {
-    const sugestedWords = await requestFetch(
-      'GET',
-      `${urlAutoComplete}api_key=${apiKey}&q=${wordSearch}`
-    );
-      console.log(sugestedWords);
-      
-    const idAutocompleteSuggestedOptions = document.getElementById('search');
-    idAutocompleteSuggestedOptions.innerHTML = '';
-    autocompleteHashTag.innerHTML = '';
+const getAutocompleteSuggestedSearch = async (wordSearch) => {
+  const sugestedWords = await requestFetch(
+    'GET',
+    `${urlAutoComplete}api_key=${apiKey}&q=${wordSearch}`
+  );
+    console.log(sugestedWords);
+    
+  const idAutocompleteSuggestedOptions = document.getElementById('search');
+  idAutocompleteSuggestedOptions.innerHTML = '';
+  autocompleteHashTag.innerHTML = '';
+
+  let tag = wordSearch.trim().replace(/ /g, '');
+  // Suggested autocomplete select
+  let aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${wordSearch}')">${wordSearch}</a>`;
+  idAutocompleteSuggestedOptions.innerHTML += aBusqueda;
+  // Suggested autocomplete tag
+  let aAutocompleteHashTag = `<a onclick="getSearchGif('${wordSearch}')">#${tag}</a>`;
+  autocompleteHashTag.innerHTML += aAutocompleteHashTag;
+
+  if (sugestedWords.data.length) {
+    sugestedWords.data.slice(0, 6).forEach((element) => {
+      const word = element.name;
+      tag = word.trim().replace(/ /g, '');
+      // Suggested autocomplete select
+      aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${word}')">${word}</a>`;
+      idAutocompleteSuggestedOptions.innerHTML += aBusqueda;
+      // Suggested autocomplete tag
+      aAutocompleteHashTag = `<a onclick="getSearchGif('${word}')">#${tag}</a>`;
+      autocompleteHashTag.innerHTML += aAutocompleteHashTag;
+    });
+  }
+
+  addRemoveClass('autocompleteSuggestedSearch', 'show', 'hide');
+  addRemoveClass('autocompleteHashTag', 'show', 'hide');
+  addRemoveClass('btnSearchGif', 'btn-primary', 'btn-disabled');
+};
+
+const closeImgGif = async index => {
+  document.getElementById(`innerWindow${index}`).innerHTML = null;
+  document.getElementById(`imgGif${index}`).src = null;
+  const randomGif = await requestFetch('GET', `${urlGetRandomGif}&api_key=${apiKey}`);
+  if (randomGif?.data) {
+    const {
+      title,
+      images: {
+        fixed_height: { url }
+      }
+    } = randomGif.data;
+    const search = title.substring(0, title.indexOf('GIF')).trim();
+    const tag = search.replace(/ /g, '');
+    document.getElementById(`innerWindow${index}`).innerHTML = `#${tag}`;
+    document.getElementById(`imgGif${index}`).src = url;
+    document.getElementById(`onclickImgGif${index}`).setAttribute('onClick', `getSearchGif("${search}");`);
+  }
+};
+
+getSuggestionsAndTredingGif();
   
-    let tag = wordSearch.trim().replace(/ /g, '');
-    // Suggested autocomplete select
-    let aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${wordSearch}')">${wordSearch}</a>`;
-    idAutocompleteSuggestedOptions.innerHTML += aBusqueda;
-    // Suggested autocomplete tag
-    let aAutocompleteHashTag = `<a onclick="getSearchGif('${wordSearch}')">#${tag}</a>`;
-    autocompleteHashTag.innerHTML += aAutocompleteHashTag;
   
-    if (sugestedWords.data.length) {
-      sugestedWords.data.slice(0, 6).forEach((element) => {
-        const word = element.name;
-        tag = word.trim().replace(/ /g, '');
-        // Suggested autocomplete select
-        aBusqueda = `<a class="aBusqueda" onclick="getSearchGif('${word}')">${word}</a>`;
-        idAutocompleteSuggestedOptions.innerHTML += aBusqueda;
-        // Suggested autocomplete tag
-        aAutocompleteHashTag = `<a onclick="getSearchGif('${word}')">#${tag}</a>`;
-        autocompleteHashTag.innerHTML += aAutocompleteHashTag;
-      });
-    }
-  
-    addRemoveClass('autocompleteSuggestedSearch', 'show', 'hide');
-    addRemoveClass('autocompleteHashTag', 'show', 'hide');
-    addRemoveClass('btnSearchGif', 'btn-primary', 'btn-disabled');
-  };
-  
-  const closeImgGif = async index => {
-    document.getElementById(`innerWindow${index}`).innerHTML = null;
-    document.getElementById(`imgGif${index}`).src = null;
-    const randomGif = await requestFetch('GET', `${urlGetRandomGif}&api_key=${apiKey}`);
-    if (randomGif?.data) {
-      const {
-        title,
-        images: {
-          fixed_height: { url }
-        }
-      } = randomGif.data;
-      const search = title.substring(0, title.indexOf('GIF')).trim();
-      const tag = search.replace(/ /g, '');
-      document.getElementById(`innerWindow${index}`).innerHTML = `#${tag}`;
-      document.getElementById(`imgGif${index}`).src = url;
-      document.getElementById(`onclickImgGif${index}`).setAttribute('onClick', `getSearchGif("${search}");`);
-    }
-  };
-  
-  getSuggestionsAndTredingGif();
-  
-  const addRemoveClass = (element, classToAdd, classToRemove) => {
-    document.getElementById(element).classList.add(classToAdd);
-    document.getElementById(element).classList.remove(classToRemove);
-  };
