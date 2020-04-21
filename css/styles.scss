@@ -17,6 +17,23 @@
   display: inline-flex;;
 }
 
+.button {
+  width: 144px;
+  height: 36px;
+  flex-direction: row;
+  font-family: $fuentePrincipal;
+
+  &:hover {
+    outline: 1px dotted #110038;
+    outline-offset: -4px;
+  }
+
+  &:active {
+    outline: 1px dotted #110038;
+        outline-offset: -4px;
+  }
+}
+
 /* Section Header*/
 header {
   width: 100%;
@@ -29,22 +46,7 @@ header {
     padding-left: 10px;
   }
 
-  .button {
-    width: 144px;
-    height: 36px;
-    flex-direction: row;
-    font-family: $fuentePrincipal;
-
-    &:hover {
-      outline: 1px dotted #110038;
-      outline-offset: -4px;
-    }
-
-    &:active {
-      outline: 1px dotted #110038;
-          outline-offset: -4px;
-    }
-  }
+  
 
   .buttonDropdown {
     width: 34px;
@@ -598,6 +600,12 @@ section.crearGifsBox {
         object-fit: fill;
         padding: 2px;
       }
+
+      .gifPreview {
+        width: 832px;
+        height: 435px;
+        padding: 2px;
+      }
     }
 
   }
@@ -608,8 +616,9 @@ section.crearGifsBox {
 
     .captureButtons {
       display: flex;
-      justify-content: flex-end;
-      margin-right: 20px;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 10px;
 
       .camaraSvg {
         width: 34px;
@@ -618,14 +627,19 @@ section.crearGifsBox {
         justify-content: center;
         align-items: center;
       }
-      
-      .button {
-        font-family: $fuentePrincipal;
-      }
 
       .chronometerGif {
         margin-left: 10px;
-        margin-right: 57%;
+      }
+
+      .uploadGifSection, .recordingSection {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .captureSection {
+        display: flex;
+        justify-content: flex-end;
       }
     }
   }

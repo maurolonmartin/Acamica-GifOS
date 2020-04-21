@@ -1,6 +1,8 @@
 var recorder;
 var stream;
 var video;
+var urlBlobGif;
+var blob;
 
 function startVideoRecording() {
 
@@ -23,7 +25,7 @@ function startVideoRecording() {
         hidden: 434,
 
         onGifRecordingStarted: function() {
-          console.log("started");
+          takeScreenshotFromRecord();
         }
       });
     })
@@ -35,10 +37,38 @@ function startVideoRecording() {
 function captureGif(){
   addRemoveClass('captureGif', 'hide', 'show');
   addRemoveClass('camaraSvg', 'hide', 'show');
+  addRemoveClass('spanCheckbefore', 'hide', 'show');
+  addRemoveClass('spanRecording', 'show', 'hide');
   addRemoveClass('chronometerGif', 'show2', 'hide');
   addRemoveClass('recordingSvg', 'show2', 'hide');
   addRemoveClass('readyGif', 'show', 'hide');
   recorder.startRecording();
+}
+
+function readyGif(){
+  addRemoveClass('readyGif', 'hide', 'show');
+  addRemoveClass('recordingSvg', 'hide', 'show2');
+  addRemoveClass('spanRecording', 'hide', 'show');
+  addRemoveClass('spanPreview', 'show', 'hide');
+  // addRemoveClass('progressBarGif', 'show', 'hide');
+  addRemoveClass('repeatCapture', 'show', 'hide');
+  addRemoveClass('uploadGif', 'show', 'hide');
+  stopVideoRecording();
+}
+
+async function uploadGif() {
+  let formdata = new FormData();
+  formdata.append('api_key', apiKey);
+  formdata.append('username', userName);
+  formdata.append('file', blob ); //TERCER PARAMETRO ENVIA NOMBRE DE GIF  ES OPCIONAL 
+
+  const uploadCreatedGif = await requestFetch(
+    'POST',
+    urlUpload,
+    formdata,
+    true
+  );
+  console.log("Uploadcreated gif", uploadCreatedGif);
 }
 
 function validateAndPrepareNavigator() {
@@ -88,10 +118,31 @@ function showVideoRecording(stream) {
 function stopVideoRecording() {
   recorder.stopRecording(function() {
     const tracks = stream.getTracks();
-    let blob = recorder.getBlob();
-    invokeSaveAsDialog(blob);
+    blob = recorder.getBlob();
+    urlBlobGif = URL.createObjectURL(blob);
+    console.log("enlace del url", urlBlobGif);
+    // invokeSaveAsDialog(blob); este se le da cuando se va a descargar el gifo!!
     tracks.forEach(track => track.stop());
-    
+    recorder.reset();
+    recorder.destroy();
+    // document.getElementById('gifPreview').setAttribute('src', urlBlobGif); esta se usa para el play
+    document.getElementById('gifPreview').classList.replace('hide', 'show');
+    document.getElementById('videoRecord').classList.replace('show', 'hide');
   });
 }
 
+function takeScreenshotFromRecord() {
+  try {
+    // Taken from https://developer.mozilla.org/es/docs/WebRTC/Taking_webcam_photos
+    let canvas = document.createElement('canvas'); // Dynamically Create a Canvas Element
+    canvas.id = 'extractFileCanvas'; // Give the canvas an id
+    canvas.width = video.videoWidth; // Set the width of the Canvas
+    canvas.height = video.videoHeight; // Set the height of the Canvas
+    let ctx = canvas.getContext('2d'); // Get the "CTX" of the canvas
+    ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight); // Draw your image to the canvas
+    var urlBlobPng = canvas.toDataURL('image/png'); // This will save your image as a //png file in the base64 format.
+    document.getElementById('gifPreview').setAttribute('src', urlBlobPng);
+  } catch (err) {
+    console.error(`Failed to take screenshot from record. ${err}`);
+  }
+}

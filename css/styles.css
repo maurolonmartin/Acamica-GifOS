@@ -22,6 +22,26 @@ body {
   display: inline-flex;
 }
 
+.button {
+  width: 144px;
+  height: 36px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+.button:hover {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
+.button:active {
+  outline: 1px dotted #110038;
+  outline-offset: -4px;
+}
+
 /* Section Header*/
 header {
   width: 100%;
@@ -38,26 +58,6 @@ header {
 header p.welcomeMessage {
   margin: 0;
   padding-left: 10px;
-}
-
-header .button {
-  width: 144px;
-  height: 36px;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  font-family: "Chakra Petch", sans-serif;
-}
-
-header .button:hover {
-  outline: 1px dotted #110038;
-  outline-offset: -4px;
-}
-
-header .button:active {
-  outline: 1px dotted #110038;
-  outline-offset: -4px;
 }
 
 header .buttonDropdown {
@@ -690,6 +690,12 @@ section.crearGifsBox .videoPreview .videoWindow .videoRecord {
   padding: 2px;
 }
 
+section.crearGifsBox .videoPreview .videoWindow .gifPreview {
+  width: 832px;
+  height: 435px;
+  padding: 2px;
+}
+
 section.crearGifsBox .capture {
   font-family: "Chakra Petch", sans-serif;
   width: 100%;
@@ -699,10 +705,10 @@ section.crearGifsBox .capture .captureButtons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  margin-right: 20px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 10px;
 }
 
 section.crearGifsBox .capture .captureButtons .camaraSvg {
@@ -719,13 +725,28 @@ section.crearGifsBox .capture .captureButtons .camaraSvg {
           align-items: center;
 }
 
-section.crearGifsBox .capture .captureButtons .button {
-  font-family: "Chakra Petch", sans-serif;
-}
-
 section.crearGifsBox .capture .captureButtons .chronometerGif {
   margin-left: 10px;
-  margin-right: 57%;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection, section.crearGifsBox .capture .captureButtons .recordingSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+section.crearGifsBox .capture .captureButtons .captureSection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-left: 79%;
 }
 
 section.misGifs {

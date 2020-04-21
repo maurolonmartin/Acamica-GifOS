@@ -92,35 +92,57 @@
     </div>
     <div class="videoPreview hide" id="videoPreview">
       <div class="innerWindow">
-        <span>Un Chequeo Antes de Empezar</span>
+        <span id="spanCheckbefore" class="show">Un Chequeo Antes de Empezar</span>
+        <span id="spanRecording" class="hide">Capturando Tu Guifo</span>
+        <span id="spanPreview" class="hide">Vista previa</span>
         <a onclick="window.location.href = './video.html';">
           <img id="closeImgGif(0)" src="../../assets/close.svg" alt="close_gif" class="closeGif">
         </a>
       </div>
       <div class="videoWindow">
         <video id="videoRecord" class="videoRecord"></video>
-        <img id="gifPreview" class="hide" />
+        <img id="gifPreview" class="gifPreview hide" />
       </div>
       <div class="capture">
-        <div class="captureAndPreviewGif hide" id="captureAndPreviewGif">
+        <!-- <div class="captureAndPreviewGif hide" id="captureAndPreviewGif">
           
-        </div>
-
+        </div> -->
         <div class="captureButtons" id="captureButtons">
-          <div class="camaraSvg" id="camaraSvg" onclick="captureGif()">
-            <img src="./assets/camera.svg" alt="">
+          <div class="captureSection">
+            <div class="camaraSvg" id="camaraSvg" onclick="captureGif()">
+              <img src="./assets/camera.svg" alt="">
+            </div>
+            <button id="captureGif" onclick="captureGif();" class="button">Capturar</button>
           </div>
-          <button id="captureGif" onclick="captureGif();" class="button">Capturar</button>
-          <button id="cancelGif" onclick="cancelGif();" class="hide">Cancelar</button>
-          <input type="text" id="chronometerGif" name="chronometerGif" class="chronometerGif hide"
-            placeholder="00:00:00:00" readonly />
-          <span id="progressBarGif" onclick="progressBarGif();" class="progressBarGif hide">Progress Bar</span>
-          <button id="repeatCapture" onclick="repeatCapture();" class="hide">Repetir captura</button>
-          <button id="uploadGif" onclick="uploadGif();" class="hide">Subir Guifo</button>
-          <div class="camaraSvg hide" id="recordingSvg" onclick="readyGif()">
-            <img src="./assets/recording.svg" alt="">
+          <div class="chronometer">
+            <input type="text" id="chronometerGif" name="chronometerGif" class="chronometerGif hide"
+              placeholder="00:00:00:00" readonly />
           </div>
-          <button id="readyGif" onclick="readyGif()" class="button hide">Listo</button>
+          <div class="play-progress-bar">
+            <a
+              id="btn-play-preview-gif"
+              onclick="playPreview();"
+              class="btn-play-preview-gif mr8 hide"
+            >
+              <img
+                src="./assets/forward.svg"
+                alt="play-forward"
+                class="play-forward"
+                id="play-forward"
+              />
+            </a>
+            <div id="preview-progress-bar-gif" class="preview-progress-bar-gif"></div>
+          </div>
+          <div class="uploadGifSection">
+            <button id="repeatCapture" onclick="repeatCapture();" class="button hide">Repetir captura</button>
+            <button id="uploadGif" onclick="uploadGif();" class="button hide">Subir Guifo</button>
+          </div>
+          <div class="recordingSection">
+            <div class="camaraSvg hide" id="recordingSvg" onclick="readyGif()">
+              <img src="./assets/recording.svg" alt="">
+            </div>
+            <button id="readyGif" onclick="readyGif()" class="button hide">Listo</button>
+          </div>
         </div>
       </div>
     </div>
@@ -147,10 +169,6 @@
       readonly
       placeholder="Mis guifos" />
   </section>
-  <div>
-    
-    <button onclick="stopVideoRecording();">Detener grabación</button>
-  </div>
   <script src="../js/recordRTC.js"></script>
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
   

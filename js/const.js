@@ -3,7 +3,7 @@ const apiKey = "HfrTQGC7YgwToMnjlu7ccclqG6807Mg0";
 const userName = "maurolonmartin";
 const urlSearch = 'https://api.giphy.com/v1/gifs/search?q=';
 const urlTrending = 'https://api.giphy.com/v1/gifs/trending';
-const urlUpload = 'https://upload.giphy.com/v1/gifs';
+const urlUpload = 'http://upload.giphy.com/v1/gifs';
 const urlGetGifById = 'https://api.giphy.com/v1/gifs?ids=';
 const urlGetRandomGif = 'https://api.giphy.com/v1/gifs/random?rating=G';
 const limit = '&limit=';

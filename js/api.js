@@ -20,7 +20,7 @@ function changeTheme2() {
     document.getElementById("logo").setAttribute("src", "./assets/gifOF_logo_dark.png");
 }
 
-const video = document.getElementById('vid2');
+// const video = document.getElementById('vid2');
 
 function getStreamAndRecord() {
     navigator.mediaDevices.getUserMedia({
