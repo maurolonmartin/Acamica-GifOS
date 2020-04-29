@@ -38,7 +38,7 @@ button {
 
   &:active {
     outline: 1px dotted #110038;
-        outline-offset: -4px;
+    outline-offset: -4px;
   }
 }
 
@@ -430,9 +430,10 @@ section.tendencias {
       position: relative;
 
       &:hover {
-        width: 103%;
         background:#E6E6E6;
-        box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+        border: outset;
+        outline: 1px dotted #110038;
+        outline-offset: -5px;
       }
 
       .imgGif {
@@ -453,21 +454,9 @@ section.tendencias {
 
       &:hover {
         width: 100%;
-        
-        .imgGif {
-          width: 98.5%;
-          height: 97%;
-          margin-top: 2px;
-          margin-left: 4px;
-          margin-bottom: 2px;
-          border: 1px #110038 dotted;
-        }
-
+      
         p {
           opacity: 1;
-          width: 99%;
-          bottom: -12px;
-          margin-left: 2px;
         }
       }
       
