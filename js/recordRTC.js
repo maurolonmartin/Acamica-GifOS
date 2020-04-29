@@ -43,32 +43,51 @@ function captureGif(){
   addRemoveClass('recordingSvg', 'show2', 'hide');
   addRemoveClass('readyGif', 'show', 'hide');
   recorder.startRecording();
+
 }
 
 function readyGif(){
-  addRemoveClass('readyGif', 'hide', 'show');
-  addRemoveClass('recordingSvg', 'hide', 'show2');
   addRemoveClass('spanRecording', 'hide', 'show');
+  addRemoveClass('chronometerGif', 'hide', 'show');
+  addRemoveClass('recordingSvg', 'hide', 'show2');
+  addRemoveClass('readyGif', 'hide', 'show');
   addRemoveClass('spanPreview', 'show', 'hide');
-  // addRemoveClass('progressBarGif', 'show', 'hide');
+  addRemoveClass('chronometerGif2', 'show', 'hide');
+  addRemoveClass('btn-play-preview-gif', 'show', 'hide');
+  addRemoveClass('preview-progress-bar-gif', 'show2', 'hide');
   addRemoveClass('repeatCapture', 'show', 'hide');
   addRemoveClass('uploadGif', 'show', 'hide');
   stopVideoRecording();
 }
 
 async function uploadGif() {
-  let formdata = new FormData();
-  formdata.append('api_key', apiKey);
-  formdata.append('username', userName);
-  formdata.append('file', blob ); //TERCER PARAMETRO ENVIA NOMBRE DE GIF  ES OPCIONAL 
+  addRemoveClass('spanPreview', 'hide', 'show');
+  addRemoveClass('chronometerGif2', 'hide', 'show');
+  addRemoveClass('btn-play-preview-gif', 'hide', 'show');
+  addRemoveClass('preview-progress-bar-gif', 'hide', 'show2');
+  addRemoveClass('repeatCapture', 'hide', 'show');
+  addRemoveClass('uploadGif', 'hide', 'show');
+  addRemoveClass('videoRecord', 'hide', 'show');
+  addRemoveClass('gifPreview', 'hide', 'show');
+  addRemoveClass('spanUploading', 'show', 'hide');
+  addRemoveClass('contentUploadingGif', 'show', 'hide');
+  addRemoveClass('div-upload-progress-bar-gif', 'show2', 'hide');
 
-  const uploadCreatedGif = await requestFetch(
-    'POST',
-    urlUpload,
-    formdata,
-    true
-  );
-  console.log("Uploadcreated gif", uploadCreatedGif);
+  
+  addRemoveClass('btns-uploading-gif', 'show', 'hide');
+  addRemoveClass('btns-uploading-gif', 'show', 'hide');
+  // let formdata = new FormData();
+  // formdata.append('api_key', apiKey);
+  // formdata.append('username', userName);
+  // formdata.append('file', blob ); //TERCER PARAMETRO ENVIA NOMBRE DE GIF  ES OPCIONAL 
+
+  // const uploadCreatedGif = await requestFetch(
+  //   'POST',
+  //   urlUpload,
+  //   formdata,
+  //   true
+  // );
+  // console.log("Uploadcreated gif", uploadCreatedGif);
 }
 
 function validateAndPrepareNavigator() {

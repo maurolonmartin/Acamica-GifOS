@@ -83,16 +83,40 @@ body {
   border: dotted 1px #110038;
 }
 
-.innerWindow {
+.oldWindow .innerWindow {
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
   color: white;
 }
 
-input {
+.oldWindow .searchForm {
+  background: #E6E6E6;
+}
+
+.oldWindow input {
   border: 1px solid #979797;
   -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
           box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+}
+
+.oldWindow .btn-disabled {
+  color: #B4B4B4;
+  background-color: #e6e6e6;
+  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+}
+
+.oldWindow .btn-primary {
+  color: #110038;
+  background-color: #f7c9f3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+}
+
+.oldWindow .btn-primary:hover {
+  background-color: #E6BBE2;
+  border: dotted 1px #110038;
 }
 
 .divImgGif {
@@ -104,21 +128,6 @@ input {
 .divImgGif .hashTagTop {
   background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
-}
-
-.btn-disabled {
-  color: #B4B4B4;
-  background-color: #e6e6e6;
-  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
-}
-
-.btn-primary {
-  color: #110038;
-  background-color: #f7c9f3;
-  border: 1px solid #110038;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
 }
 
 .autocompleteSuggestedSearch .search {
@@ -147,26 +156,27 @@ input {
   background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
 }
 
+section.crearGifsBox .innerWindow {
+  background-image: -webkit-gradient(linear, right top, left top, from(#F7C9F3), to(#4180F6));
+  background-image: linear-gradient(270deg, #F7C9F3 0%, #4180F6 100%);
+  color: white;
+}
+
 section.crearGifsBox .principalBox {
   background: #E6E6E6;
-  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
-          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
 section.crearGifsBox .videoPreview {
   background: #E6E6E6;
+}
+
+section.crearGifsBox .videoPreview .videoWindow {
+  background: #ffffff;
   -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
           box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 }
 
-section.crearGifsBox .videoPreview .videoWindow {
-  background: #FFFFFF;
-  border: 1px solid #979797;
-  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-}
-
-section.crearGifsBox .camaraSvg {
+section.crearGifsBox .camaraSvg, section.crearGifsBox .btn-play-preview-gif {
   background: #F7C9F3;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;

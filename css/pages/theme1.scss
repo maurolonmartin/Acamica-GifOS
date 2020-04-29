@@ -75,19 +75,50 @@ body {
   line-height: 18px;
 
   &:hover {
-    border: dotted 1px $colorFuentePrincipal;;
+    border: dotted 1px $colorFuentePrincipal;
   }
 }
 
-.innerWindow{
-  background-image: $gradientPrincipal;
-  color: white;
-  }
+.oldWindow {
 
-input {
-  border: 1px solid #979797;
-  box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  .innerWindow{
+    background-image: $gradientPrincipal;
+    color: white;
+    }
+
+    .searchForm {
+      background: #E6E6E6 ;
+    }
+
+    input {
+      border: 1px solid #979797;
+      box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    }
+
+    .btn-disabled {
+      color: #B4B4B4;
+      background-color: #e6e6e6;
+      box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+      -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
+    }
+    
+    .btn-primary {
+      color: #110038;
+      background-color: #f7c9f3;
+      border: 1px solid #110038;
+      -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+      box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
+
+      &:hover {
+        background-color: #E6BBE2;
+        border: dotted 1px $colorFuentePrincipal;
+      }
+    }
+
 }
+
+
+
 
 .divImgGif {
   background: #E6E6E6;
@@ -98,20 +129,7 @@ input {
   }
 }
 
-.btn-disabled {
-  color: #B4B4B4;
-  background-color: #e6e6e6;
-  box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-  -webkit-box-shadow: inset -1px -1px 0 0 #b4b4b4, inset 1px 1px 0 0 #ffffff;
-}
 
-.btn-primary {
-  color: #110038;
-  background-color: #f7c9f3;
-  border: 1px solid #110038;
-  -webkit-box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-  box-shadow: inset -1px -1px 0 0 #997d97, inset 1px 1px 0 0 #ffffff;
-}
 
 .autocompleteSuggestedSearch {
   
@@ -142,27 +160,31 @@ input {
 
 section.crearGifsBox {
 
+  .innerWindow{
+    background-image: $gradientPrincipal;
+    color: white;
+    }
+
   .principalBox {
-    background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+    background: #E6E6E6;   
   }
 
   .videoPreview {
     background: #E6E6E6;
-    box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
 
     .videoWindow {
-      background: #FFFFFF;
-      border: 1px solid #979797;
-      box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+      background: #ffffff;
+      box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF; 
     }
   }
 
-  .camaraSvg {
+  .camaraSvg, .btn-play-preview-gif {
     background: #F7C9F3;
     border: 1px solid #110038;
     box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
   }
+
+  
 }
 
 section.misGifs {

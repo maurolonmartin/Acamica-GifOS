@@ -22,6 +22,16 @@ body {
   display: inline-flex;
 }
 
+.show3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+}
+
 .button {
   width: 144px;
   height: 36px;
@@ -267,6 +277,7 @@ section.busqueda .oldWindow .btn-primary {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  outline-offset: -4px;
 }
 
 section.busqueda .autocompleteSuggestedSearch {
@@ -570,12 +581,10 @@ section.crearGifsBox .principalBox {
   height: 386px;
   margin: 75px auto 153px;
   top: -10px;
+  border: outset;
 }
 
 section.crearGifsBox .principalBox .innerWindow {
-  width: 99.5%;
-  margin-top: 0%;
-  margin-left: 3px;
   height: 24px;
   color: white;
 }
@@ -658,6 +667,7 @@ section.crearGifsBox .videoPreview {
   width: 860px;
   height: 548px;
   margin: 75px auto 153px;
+  border: outset;
 }
 
 section.crearGifsBox .videoPreview .innerWindow {
@@ -682,12 +692,12 @@ section.crearGifsBox .videoPreview .videoWindow {
   width: 836px;
   height: 440px;
   margin: 10px 0 10px 10px;
+  border: inset;
 }
 
 section.crearGifsBox .videoPreview .videoWindow .videoRecord {
   -o-object-fit: fill;
      object-fit: fill;
-  padding: 2px;
 }
 
 section.crearGifsBox .videoPreview .videoWindow .gifPreview {
@@ -696,22 +706,62 @@ section.crearGifsBox .videoPreview .videoWindow .gifPreview {
   padding: 2px;
 }
 
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 21% 31% 21% 31%;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload-progress-bar {
+  width: 240px;
+  height: 24px;
+  -webkit-box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+          box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload-progress-bar div {
+  width: 12px;
+  height: 20px;
+  background-color: #999999;
+  border: solid 1px #ffffff;
+}
+
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .line-through-text {
+  text-decoration: line-through;
+}
+
 section.crearGifsBox .capture {
   font-family: "Chakra Petch", sans-serif;
   width: 100%;
 }
 
 section.crearGifsBox .capture .captureButtons {
+  width: 100%;
+}
+
+section.crearGifsBox .capture .captureButtons .captureSection {
+  width: 99%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-right: 10px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-section.crearGifsBox .capture .captureButtons .camaraSvg {
+section.crearGifsBox .capture .captureButtons .captureSection .camaraSvg {
   width: 34px;
   height: 34px;
   display: -webkit-inline-box;
@@ -725,11 +775,66 @@ section.crearGifsBox .capture .captureButtons .camaraSvg {
           align-items: center;
 }
 
-section.crearGifsBox .capture .captureButtons .chronometerGif {
-  margin-left: 10px;
+section.crearGifsBox .capture .captureButtons .recordingSection {
+  width: 99%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-section.crearGifsBox .capture .captureButtons .uploadGifSection, section.crearGifsBox .capture .captureButtons .recordingSection {
+section.crearGifsBox .capture .captureButtons .recordingSection .chronometerGif {
+  margin-left: 10px;
+  width: 124px;
+  font-family: "Chakra Petch", sans-serif;
+  text-align: center;
+}
+
+section.crearGifsBox .capture .captureButtons .recordingSection .recordingButtons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+}
+
+section.crearGifsBox .capture .captureButtons .recordingSection .recordingButtons .camaraSvg {
+  width: 34px;
+  height: 34px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection {
+  width: 99%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection .chronometerGif {
+  margin-left: 10px;
+  width: 124px;
+  font-family: "Chakra Petch", sans-serif;
+  text-align: center;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -739,14 +844,129 @@ section.crearGifsBox .capture .captureButtons .uploadGifSection, section.crearGi
           flex-direction: row;
 }
 
-section.crearGifsBox .capture .captureButtons .captureSection {
+section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar .btn-play-preview-gif {
+  width: 20px;
+  height: 20px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar .preview-progress-bar {
+  width: 240px;
+  height: 24px;
+  -webkit-box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+          box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar .preview-progress-bar div {
+  width: 12px;
+  height: 20px;
+  background-color: #999999;
+  border: solid 1px #ffffff;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection .uploadButtons {
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  text-align: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadingSection {
+  width: 99%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin-left: 79%;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadingSection .cancelButton {
+  width: 144px;
+  height: 36px;
+  font-family: "Chakra Petch", sans-serif;
+  color: #110038;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 18px;
+}
+
+section.crearGifsBox .successfullyUploadedGif {
+  width: 721px;
+  height: 391px;
+  border: outset;
+  background: #E6E6E6;
+  margin: 75px auto 153px;
+  top: -10px;
+}
+
+section.crearGifsBox .successfullyUploadedGif .innerWindow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+section.crearGifsBox .successfullyUploadedGif .innerWindow span {
+  margin-left: 10px;
+}
+
+section.crearGifsBox .successfullyUploadedGif .innerWindow a {
+  margin-right: 10px;
+  margin-top: 3px;
+}
+
+section.crearGifsBox .successfullyUploadedGif .btns-uploading-gif {
+  font-family: "Chakra Petch", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+  padding-top: 10px;
+}
+
+section.crearGifsBox .successfullyUploadedGif .btns-uploading-gif .cancelButton {
+  width: 256px;
+  height: 36px;
+  background: #FFF4FD;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
 }
 
 section.misGifs {

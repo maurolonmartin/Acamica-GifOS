@@ -79,14 +79,42 @@ a div {
   background-image: $gradientSecundario;
 }
 
-.innerWindow{
-  background-image: $gradientSecundario;
-  }
+.oldWindow {
 
-  input {
-    border: 1px solid #979797;
-    box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
-  }
+  .innerWindow{
+    background-image: $gradientSecundario;
+    }
+
+    .searchForm {
+      background: #B4B4B4;
+    }
+  
+    input {
+      border: 1px solid #979797;
+      box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+    }
+
+    .btn-disabled {
+      color: #8F8F8F;
+      background: #B4B4B4;
+      border: 1px solid #808080;
+      box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
+    }
+  
+    .btn-primary {
+      color: #FFFFFF;
+      background: #EE3EFE;
+      border: 1px solid #110038;
+      box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
+
+      &:hover {
+        border: dotted 1px $colorFuentePrincipal;
+        background: #CE36DB;
+      }
+    }
+}
+
+
 
   .divImgGif {
     background: #B4B4B4;
@@ -97,19 +125,7 @@ a div {
     }
   }
 
-  .btn-disabled {
-    color: #8F8F8F;
-    background: #B4B4B4;
-    border: 1px solid #808080;
-    box-shadow: inset -1px -1px 0 0 #B4B4B4, inset 1px 1px 0 0 #FFFFFF;
-  }
 
-  .btn-primary {
-    color: #FFFFFF;
-    background: #EE3EFE;
-    border: 1px solid #110038;
-    box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
-  }
 
   .autocompleteSuggestedSearch {
 
