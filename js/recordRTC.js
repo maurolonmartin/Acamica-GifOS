@@ -6,6 +6,7 @@ var blob;
 const idVideoRecord = document.getElementById('videoRecord');
 const clipboard = new Clipboard();
 const button = document.getElementById('readyGif');
+var myGifosFromLocalStorage;
 
 function startVideoRecording() {
 
