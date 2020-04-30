@@ -199,7 +199,14 @@ header section.bottom .navButtons a div {
 header section.bottom .navButtons .buttonGifos {
   padding-top: 10px;
   width: 95px;
-  height: 25px;
+  height: 36px;
+  border: none;
+  background-color: transparent;
+}
+
+header section.bottom .navButtons .buttonGifos:hover {
+  outline: 1px dotted #110038;
+  outline-offset: -2px;
 }
 
 header section.bottom .navButtons .underlineLetter {
@@ -695,21 +702,34 @@ section.crearGifsBox .videoPreview .videoWindow .gifPreview {
 }
 
 section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif {
+  width: 100%;
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin: 21% 31% 21% 31%;
   font-family: "Chakra Petch", sans-serif;
+}
+
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .spanupper {
+  font-size: 16px;
+  color: #110038;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
 }
 
 section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload-progress-bar {
   width: 240px;
   height: 24px;
-  -webkit-box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
-          box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+  -webkit-box-shadow: inset -2px -2px 0 0 #2b2020, inset 2px 2px 0 0 #000;
+          box-shadow: inset -2px -2px 0 0 #2b2020, inset 2px 2px 0 0 #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -717,6 +737,8 @@ section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding: 2px;
+  overflow: hidden;
 }
 
 section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload-progress-bar div {
@@ -726,8 +748,20 @@ section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload
   border: solid 1px #ffffff;
 }
 
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload-progress-bar .pink {
+  background-color: #F7C9F3;
+}
+
 section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .line-through-text {
   text-decoration: line-through;
+}
+
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .span {
+  font-size: 12px;
+  color: rgba(17, 0, 56, 0.64);
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 14px;
 }
 
 section.crearGifsBox .capture {
@@ -778,6 +812,7 @@ section.crearGifsBox .capture .captureButtons .recordingSection .chronometerGif 
   width: 124px;
   font-family: "Chakra Petch", sans-serif;
   text-align: center;
+  border: inset;
 }
 
 section.crearGifsBox .capture .captureButtons .recordingSection .recordingButtons {
@@ -820,6 +855,7 @@ section.crearGifsBox .capture .captureButtons .uploadGifSection .chronometerGif 
   width: 124px;
   font-family: "Chakra Petch", sans-serif;
   text-align: center;
+  border: inset;
 }
 
 section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar {
@@ -830,11 +866,12 @@ section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-b
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  margin-top: 7px;
 }
 
 section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar .btn-play-preview-gif {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -844,13 +881,14 @@ section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-b
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding: 2px;
 }
 
 section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar .preview-progress-bar {
   width: 240px;
   height: 24px;
-  -webkit-box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
-          box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+  -webkit-box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000;
+          box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -858,6 +896,8 @@ section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-b
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  padding: 2px;
+  overflow: hidden;
 }
 
 section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar .preview-progress-bar div {
@@ -865,6 +905,10 @@ section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-b
   height: 20px;
   background-color: #999999;
   border: solid 1px #ffffff;
+}
+
+section.crearGifsBox .capture .captureButtons .uploadGifSection .play-progress-bar .preview-progress-bar .pink {
+  background-color: #F7C9F3;
 }
 
 section.crearGifsBox .capture .captureButtons .uploadGifSection .uploadButtons {
@@ -935,7 +979,34 @@ section.crearGifsBox .successfullyUploadedGif .innerWindow a {
   margin-top: 3px;
 }
 
-section.crearGifsBox .successfullyUploadedGif .btns-uploading-gif {
+section.crearGifsBox .successfullyUploadedGif .content {
+  margin: 20px 0 0 20px;
+  padding: 8px 14px 13px 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: "Chakra Petch", sans-serif;
+}
+
+section.crearGifsBox .successfullyUploadedGif .content .imgContainer {
+  width: 371px;
+  height: 196px;
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+  -o-object-fit: fill;
+     object-fit: fill;
+  margin-right: 10px;
+}
+
+section.crearGifsBox .successfullyUploadedGif .content .imgContainer img {
+  width: 367px;
+  height: 192px;
+  margin: 2px 0 0 2px;
+}
+
+section.crearGifsBox .successfullyUploadedGif .content .btns-end-gif {
   font-family: "Chakra Petch", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -948,13 +1019,34 @@ section.crearGifsBox .successfullyUploadedGif .btns-uploading-gif {
   padding-top: 10px;
 }
 
-section.crearGifsBox .successfullyUploadedGif .btns-uploading-gif .cancelButton {
+section.crearGifsBox .successfullyUploadedGif .content .btns-end-gif .cancelButton {
   width: 256px;
   height: 36px;
   background: #FFF4FD;
   border: 1px solid #110038;
   -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
           box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+section.crearGifsBox .successfullyUploadedGif .finishButtons {
+  width: 100%;
+  margin-top: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+section.crearGifsBox .successfullyUploadedGif .finishButtons .finishButton {
+  width: 144px;
+  height: 36px;
+  background: #F7C9F3;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+  margin-right: 6%;
 }
 
 section.misGifs {
@@ -972,5 +1064,29 @@ section.misGifs input.misGifsInput {
           align-items: center;
   margin-bottom: 20px;
   padding-left: 10px;
+}
+
+section.misGifs div.div-my-gifos-gif {
+  width: 100%;
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: (minmax(0, 25%))[4];
+      grid-template-columns: repeat(4, minmax(0, 25%));
+}
+
+section.misGifs div.div-my-gifos-gif .divImgGif {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+section.misGifs div.div-my-gifos-gif .divImgGif .imgGif {
+  width: 100%;
+  height: 100%;
+  margin-top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=styles.css.map */

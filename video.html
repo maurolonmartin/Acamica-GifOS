@@ -30,7 +30,7 @@
       </div>
       <section class="navButtons">
         <div>
-          <button class="button" onclick="window.location.href = './video.html';">
+          <button class="button" onclick="createGuifoButton()">
             Crear Guifos
           </button>
         </div>
@@ -52,14 +52,14 @@
           </div>
         </div>
         <!--Fin cambio de botones-->
-        <div class="buttonGifos">
+        <button class="buttonGifos" onclick="buttonGifos()">
           <a><span class="underlineLetter">M</span>is Gifos</a>
-        </div>
+        </button>
       </section>
     </section>
   </header>
   <section class="crearGifsBox">
-    <div class="principalBox show" id="principalBox">
+    <div class="principalBox" id="principalBox">
       <div class="innerWindow">
         <span>Crear Guifos</span>
       </div>
@@ -104,14 +104,15 @@
         <video id="videoRecord" class="videoRecord"></video>
         <img id="gifPreview" class="gifPreview hide" />
         <div class="contentUploadingGif hide" id="contentUploadingGif">
-          <img src="./assets/globe_img.png" alt="iamgen del mapamundi">
+          <img src="./assets/globe_img.png" alt="imagen del mapamundi">
           <br>
-          <span>Estamos subiendo tu guifo</span>
+          <span class="spanupper">Estamos subiendo tu guifo</span>
           <div id="div-upload-progress-bar-gif" class="div-upload-progress-bar">
-            <div class="progress-span"></div>
-            <div class="progress-span"></div>
-            <div class="progress-span"></div>
-            <div class="progress-span"></div>
+            <div class="pink"></div>
+            <div class="pink"></div>
+            <div class="pink"></div>
+            <div class="pink"></div>
+            <div class="pink"></div>
             <div class="progress-span"></div>
             <div class="progress-span"></div>
             <div class="progress-span"></div>
@@ -125,7 +126,7 @@
             <div class="progress-span"></div>
             <div class="progress-span"></div>
           </div>
-          <span>
+          <span class="spanSub">
             <span>Tiempo restante:</span> <span class="line-through-text">38 años</span>
             <span>algunos minutos</span>
           </span>
@@ -147,10 +148,10 @@
             <input type="text" id="chronometerGif" name="chronometerGif" class="chronometerGif hide"
               placeholder="00:00:00:00" readonly />
             <div class="recordingButtons">
-              <div class="camaraSvg hide" id="recordingSvg" onclick="readyGif()">
+              <div class="camaraSvg orange hide" id="recordingSvg" onclick="readyGif()">
                 <img src="./assets/recording.svg" alt="">
               </div>
-              <button id="readyGif" onclick="readyGif()" class="button hide">Listo</button>
+              <button id="readyGif" onclick="readyGif()" class="button orange hide">Listo</button>
             </div>
           </div>
           
@@ -158,17 +159,17 @@
             <input type="text" id="chronometerGif2" name="chronometerGif" class="chronometerGif hide"
               placeholder="00:00:00:00" readonly />
               <div class="play-progress-bar">
-                <a id="btn-play-preview-gif" onclick="playPreview();" class="btn-play-preview-gif mr8 hide">
+                <button id="btn-play-preview-gif" onclick="showVideoRecording();" class="btn-play-preview-gif mr8 hide">
                   <img src="./assets/forward.svg" alt="play-forward" class="play-forward" id="play-forward"/>
-                </a>
+                </button>
                 <div id="preview-progress-bar-gif" class="preview-progress-bar hide">
-                  <div class="progress-span"></div>
-                  <div class="progress-span"></div>
-                  <div class="progress-span"></div>
-                  <div class="progress-span"></div>
-                  <div class="progress-span"></div>
-                  <div class="progress-span"></div>
-                  <div class="progress-span"></div>
+                  <div class="pink"></div>
+                  <div class="pink"></div>
+                  <div class="pink"></div>
+                  <div class="pink"></div>
+                  <div class="pink"></div>
+                  <div class="pink"></div>
+                  <div class="pink"></div>
                   <div class="progress-span"></div>
                   <div class="progress-span"></div>
                   <div class="progress-span"></div>
@@ -189,7 +190,7 @@
 
           <div class="uploadingSection">
             <div class="btns-uploading-gif hide" id="btns-uploading-gif">
-              <button class="cancelButton">Cancelar</button>
+              <button class="cancelButton" onclick="window.location.href = '../video.html';">Cancelar</button>
             </div>
           </div>
   
@@ -197,30 +198,45 @@
       </div>
     </div>
 
-    <div class="successfullyUploadedGif show" id="successfullyUploadedGif">
+    <div class="successfullyUploadedGif hide" id="successfullyUploadedGif">
       <div class="innerWindow">
         <span>Guifo Subido Con Éxito</span>
         <a onclick="window.location.href = './video.html';">
           <img id="closeImgGif(0)" src="../../assets/close.svg" alt="close_gif" class="closeGif">
         </a>
       </div>
-      <div class="btns-uploading-gif">
-        <button href="" class="cancelButton">Copiar enlace guifo</button>
-        <button href="" class="cancelButton">Descargar gifo</button>
-        <button href="" class="cancelButton">Listo</button>
+      <div class="content">
+        <div class="imgContainer">
+          <img id="gifPicture" src=" " alt="preview gif" />
+        </div>
+        <div class="btns-end-gif">
+          <span><strong>Guifo creado con éxito</strong></span>
+          <br>
+          <button class="cancelButton" onclick="copyLinkGuifo()">Copiar enlace guifo</button>
+          <br>
+          <button class="cancelButton" onclick="downloadGuifo(event)">Descargar gifo</button>
+        </div>
+      </div>
+      <div class="finishButtons">
+        <button class="finishButton" onclick="window.location.href = '../video.html';">Listo</button>
+
       </div>
     </div>
 
   </section>
+
   <section class="misGifs">
     <input class="misGifsInput"
       readonly
       placeholder="Mis guifos" />
+    <div class="div-my-gifos-gif" id="div-my-gifos-gif"></div>
   </section>
+  <script src="./js/const.js"></script>
+  <script src="./js/clipboard.js"></script>
   <script src="../js/recordRTC.js"></script>
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
   
-  <script src="./js/const.js"></script>
+  
   <script src="./js/api.js"></script>
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>

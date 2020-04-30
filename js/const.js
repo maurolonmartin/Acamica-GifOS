@@ -8,13 +8,13 @@ const urlGetGifById = 'https://api.giphy.com/v1/gifs?ids=';
 const urlGetRandomGif = 'https://api.giphy.com/v1/gifs/random?rating=G';
 const limit = '&limit=';
 const urlAutoComplete = 'https://api.giphy.com/v1/gifs/search/tags?';
+const keyUploadedGifs = 'uploadedGifs';
 
 var videoConstraints = {
     audio: false,
     video: {
       width: { exact: 832 },
-        height: { exact: 437 }
-
+      height: { exact: 437 }
     }
   };
 

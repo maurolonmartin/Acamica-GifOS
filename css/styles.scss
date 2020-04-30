@@ -160,8 +160,14 @@ header {
       .buttonGifos {
         padding-top: 10px;
         width: 95px;
-        height: 25px;
+        height: 36px;
+        border: none;
+        background-color: transparent;
 
+        &:hover {
+          outline: 1px dotted #110038;
+          outline-offset: -2px;
+        }
       }
     
       .underlineLetter {
@@ -605,17 +611,30 @@ section.crearGifsBox {
       }
 
       .contentUploadingGif {
+        width: 100%;
+        height: 100%;
         display: flex;
         justify-content: center;
+        align-items: center;
         margin: 21% 31% 21% 31%;
         font-family: $fuentePrincipal;
+
+        .spanupper {
+          font-size: 16px;
+          color: #110038;
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 22px;
+        }
 
         .div-upload-progress-bar {
           width: 240px;
           height: 24px;
-          box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+          box-shadow: inset -2px -2px 0 0 #2b2020, inset 2px 2px 0 0 #000;
           display: flex;
           flex-direction: row;
+          padding: 2px;
+          overflow: hidden;
 
           div {
             width: 12px;
@@ -623,10 +642,21 @@ section.crearGifsBox {
             background-color: #999999;
             border: solid 1px #ffffff;
           }
+
+          .pink {
+            background-color: #F7C9F3;
+          }
         }
         .line-through-text {
           text-decoration: line-through;
         }
+
+        .span {
+          font-size: 12px;
+          color: rgba(17,0,56,0.64);
+          letter-spacing: 0;
+          text-align: center;
+          line-height: 14px;}
       }
     }
   }
@@ -650,7 +680,6 @@ section.crearGifsBox {
           justify-content: center;
           align-items: center;
         }
-        
       }
 
       .recordingSection{
@@ -663,6 +692,7 @@ section.crearGifsBox {
           width: 124px;
           font-family: $fuentePrincipal;
           text-align: center;
+          border: inset;
         }
 
         .recordingButtons {
@@ -690,33 +720,41 @@ section.crearGifsBox {
           width: 124px;
           font-family: $fuentePrincipal;
           text-align: center;
+          border: inset;
         }
 
         .play-progress-bar {
-
           display: flex;
           flex-direction: row;
+          margin-top: 7px;
 
           .btn-play-preview-gif {
-            width: 20px;
-            height: 20px;
+            width: 26px;
+            height: 26px;
             display: inline-flex;
             justify-content: center;
             align-items: center;
+            padding: 2px;
           }
   
           .preview-progress-bar {
             width: 240px;
             height: 24px;
-            box-shadow: inset 2px 2px 0 0 #FFFCFC, inset -2px -2px 0 0 #000000;
+            box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000;
             display: flex;
             flex-direction: row;
+            padding: 2px;
+            overflow: hidden;
   
             div {
               width: 12px;
               height: 20px;
               background-color: #999999;
               border: solid 1px #ffffff;
+            }
+
+            .pink {
+              background-color: #F7C9F3;
             }
           }
         }
@@ -776,23 +814,60 @@ section.crearGifsBox {
         }
     }
 
-    .btns-uploading-gif {
-      font-family: $fuentePrincipal;
+    .content {
+      margin: 20px 0 0 20px;
+      padding: 8px 14px 13px 8px;
       display: flex;
-      flex-direction: column;
-      margin: 10px;
-      padding-top: 10px;
+      font-family: $fuentePrincipal;
 
-      .cancelButton {
-        width: 256px;
-        height: 36px;
-        background: #FFF4FD;
-        border: 1px solid #110038;
-        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+      .imgContainer {
+        width: 371px;
+        height: 196px;
+        background: #FFFFFF;
+        border: 1px solid #979797;
+        box-shadow: inset -2px -2px 0 0 #E6E6E6, inset 2px 2px 0 0 #000000;
+        object-fit: fill;
+        margin-right: 10px;
+
+        img {
+          width: 367px;
+          height: 192px;
+          margin: 2px 0 0 2px;
+        }
+      }
+
+      .btns-end-gif {
+        font-family: $fuentePrincipal;
+        display: flex;
+        flex-direction: column;
+        margin: 10px;
+        padding-top: 10px;
+  
+        .cancelButton {
+          width: 256px;
+          height: 36px;
+          background: #FFF4FD;
+          border: 1px solid #110038;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+        }
       }
     }
-    
-    
+
+    .finishButtons{
+      width: 100%;
+      margin-top: 60px;
+      display: flex;
+      justify-content: flex-end;
+
+      .finishButton {
+        width: 144px;
+        height: 36px;
+        background: #F7C9F3;
+        border: 1px solid #110038;
+        box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+        margin-right: 6%;
+      }
+    }
   }
 }
 
@@ -808,5 +883,26 @@ section.misGifs {
     align-items: center;
     margin-bottom: 20px;
     padding-left: 10px;
+  }
+
+  div.div-my-gifos-gif {
+    width: 100%;
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 25%));
+
+    .divImgGif {
+      width: 100%;
+      height: 300px;
+      position: relative;
+
+      .imgGif {
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+        object-fit: cover;
+      }
+    }
   }
 }

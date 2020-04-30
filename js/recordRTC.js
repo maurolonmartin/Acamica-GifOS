@@ -3,6 +3,8 @@ var stream;
 var video;
 var urlBlobGif;
 var blob;
+const idVideoRecord = document.getElementById('videoRecord');
+const clipboard = new Clipboard();
 
 function startVideoRecording() {
 
@@ -22,7 +24,7 @@ function startVideoRecording() {
         frameRate: 1,
         quality: 10,
         width: 832,
-        hidden: 434,
+        height: 434,
 
         onGifRecordingStarted: function() {
           takeScreenshotFromRecord();
@@ -53,7 +55,7 @@ function readyGif(){
   addRemoveClass('readyGif', 'hide', 'show');
   addRemoveClass('spanPreview', 'show', 'hide');
   addRemoveClass('chronometerGif2', 'show', 'hide');
-  addRemoveClass('btn-play-preview-gif', 'show', 'hide');
+  addRemoveClass('btn-play-preview-gif', 'show2', 'hide');
   addRemoveClass('preview-progress-bar-gif', 'show2', 'hide');
   addRemoveClass('repeatCapture', 'show', 'hide');
   addRemoveClass('uploadGif', 'show', 'hide');
@@ -63,7 +65,7 @@ function readyGif(){
 async function uploadGif() {
   addRemoveClass('spanPreview', 'hide', 'show');
   addRemoveClass('chronometerGif2', 'hide', 'show');
-  addRemoveClass('btn-play-preview-gif', 'hide', 'show');
+  addRemoveClass('btn-play-preview-gif', 'hide', 'show2');
   addRemoveClass('preview-progress-bar-gif', 'hide', 'show2');
   addRemoveClass('repeatCapture', 'hide', 'show');
   addRemoveClass('uploadGif', 'hide', 'show');
@@ -72,23 +74,65 @@ async function uploadGif() {
   addRemoveClass('spanUploading', 'show', 'hide');
   addRemoveClass('contentUploadingGif', 'show', 'hide');
   addRemoveClass('div-upload-progress-bar-gif', 'show2', 'hide');
-
-  
   addRemoveClass('btns-uploading-gif', 'show', 'hide');
   addRemoveClass('btns-uploading-gif', 'show', 'hide');
-  // let formdata = new FormData();
-  // formdata.append('api_key', apiKey);
-  // formdata.append('username', userName);
-  // formdata.append('file', blob ); //TERCER PARAMETRO ENVIA NOMBRE DE GIF  ES OPCIONAL 
+  let formdata = new FormData();
+  formdata.append('api_key', apiKey);
+  formdata.append('username', userName);
+  formdata.append('file', blob ); //TERCER PARAMETRO ENVIA NOMBRE DE GIF  ES OPCIONAL 
 
-  // const uploadCreatedGif = await requestFetch(
-  //   'POST',
-  //   urlUpload,
-  //   formdata,
-  //   true
-  // );
-  // console.log("Uploadcreated gif", uploadCreatedGif);
-}
+  const uploadGif = await requestFetch(
+    'POST',
+    urlUpload,
+    formdata,
+    true
+  );
+
+  if (uploadGif?.data) {
+    alert('Gif Subido Exitosamente!');
+    addRemoveClass('videoPreview', 'hide', 'show');
+    addRemoveClass('spanUploading', 'hide', 'show');
+    addRemoveClass('contentUploadingGif', 'hide', 'show');
+    addRemoveClass('div-upload-progress-bar-gif', 'hide', 'show2');
+    addRemoveClass('btns-uploading-gif', 'hide', 'show');
+    addRemoveClass('btns-uploading-gif', 'hide', 'show');
+    addRemoveClass('successfullyUploadedGif', 'show', 'hide');
+
+
+    let uploadedGifs = localStorage.getItem(keyUploadedGifs);
+    if(uploadedGifs) {
+      uploadedGifs += ','+ uploadGif.data.id; 
+      localStorage.setItem(keyUploadedGifs, uploadedGifs);
+    } else {
+      localStorage.setItem(keyUploadedGifs, uploadGif.data.id);
+    }
+    await getMyGifOS();
+    await getGifByIDFromLocalStorage(uploadGif.data.id);
+  }
+};
+
+const getMyGifOS = async () => {
+  const uploadedGifs = localStorage.getItem(keyUploadedGifs);
+
+  if (uploadedGifs) {
+    myGifosFromLocalStorage = await requestFetch(
+      'GET',
+      `${urlGetGifById}${uploadedGifs}&api_key=${apiKey}`
+    );
+  }
+
+  drawGif(myGifosFromLocalStorage?.data, 'div-my-gifos-gif', false, false);
+};
+
+const getGifByIDFromLocalStorage = async (id) => {
+  const gifById = myGifosFromLocalStorage.data.filter((gif) => gif.id === id)[0];
+  let {
+    images: {
+      fixed_height: { url }
+    }
+  } = gifById;
+  urlGif = url;
+};
 
 function validateAndPrepareNavigator() {
   // Older browsers might not implement mediaDevices at all, so we set an empty object first
@@ -121,6 +165,8 @@ function validateAndPrepareNavigator() {
 }
 
 function showVideoRecording(stream) {
+  console.log("se activa el evento del boton")
+  document.getElementById('gifPreview').setAttribute('src', urlBlobGif);
   video = document.getElementById("videoRecord");
   // Older browsers may not have srcObject
   if ("srcObject" in video) {
@@ -139,12 +185,10 @@ function stopVideoRecording() {
     const tracks = stream.getTracks();
     blob = recorder.getBlob();
     urlBlobGif = URL.createObjectURL(blob);
-    console.log("enlace del url", urlBlobGif);
     // invokeSaveAsDialog(blob); este se le da cuando se va a descargar el gifo!!
     tracks.forEach(track => track.stop());
     recorder.reset();
     recorder.destroy();
-    // document.getElementById('gifPreview').setAttribute('src', urlBlobGif); esta se usa para el play
     document.getElementById('gifPreview').classList.replace('hide', 'show');
     document.getElementById('videoRecord').classList.replace('show', 'hide');
   });
@@ -161,7 +205,19 @@ function takeScreenshotFromRecord() {
     ctx.drawImage(video, 0, 0, video.videoWidth, video.videoHeight); // Draw your image to the canvas
     var urlBlobPng = canvas.toDataURL('image/png'); // This will save your image as a //png file in the base64 format.
     document.getElementById('gifPreview').setAttribute('src', urlBlobPng);
+    document.getElementById('gifPicture').setAttribute('src', urlBlobPng);
   } catch (err) {
     console.error(`Failed to take screenshot from record. ${err}`);
   }
 }
+
+function downloadGuifo(e) {
+  e.preventDefault();
+  invokeSaveAsDialog(blob)
+}
+
+ function copyLinkGuifo(){
+  clipboard.copy(urlGif);
+};
+
+getMyGifOS();

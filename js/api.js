@@ -20,6 +20,15 @@ function changeTheme2() {
     document.getElementById("logo").setAttribute("src", "./assets/gifOF_logo_dark.png");
 }
 
+function createGuifoButton() {
+    window.location.href = './video.html';
+    addRemoveClass('principalBox', 'show', 'hide');
+}
+
+function buttonGifos() {
+    window.location.href = './video.html';
+}
+
 // const video = document.getElementById('vid2');
 
 function getStreamAndRecord() {
@@ -33,3 +42,4 @@ function getStreamAndRecord() {
         video.play()
     })
 }
+
