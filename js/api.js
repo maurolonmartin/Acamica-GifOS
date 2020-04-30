@@ -29,8 +29,6 @@ function buttonGifos() {
     window.location.href = './video.html';
 }
 
-// const video = document.getElementById('vid2');
-
 function getStreamAndRecord() {
     navigator.mediaDevices.getUserMedia({
         audio: false,

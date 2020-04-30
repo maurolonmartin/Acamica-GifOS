@@ -72,14 +72,14 @@ async function uploadGif() {
   addRemoveClass('videoRecord', 'hide', 'show');
   addRemoveClass('gifPreview', 'hide', 'show');
   addRemoveClass('spanUploading', 'show', 'hide');
-  addRemoveClass('contentUploadingGif', 'show', 'hide');
+  addRemoveClass('contentUploadingGif', 'show2', 'hide');
   addRemoveClass('div-upload-progress-bar-gif', 'show2', 'hide');
   addRemoveClass('btns-uploading-gif', 'show', 'hide');
   addRemoveClass('btns-uploading-gif', 'show', 'hide');
   let formdata = new FormData();
   formdata.append('api_key', apiKey);
   formdata.append('username', userName);
-  formdata.append('file', blob ); //TERCER PARAMETRO ENVIA NOMBRE DE GIF  ES OPCIONAL 
+  formdata.append('file', blob );
 
   const uploadGif = await requestFetch(
     'POST',
@@ -89,10 +89,9 @@ async function uploadGif() {
   );
 
   if (uploadGif?.data) {
-    alert('Gif Subido Exitosamente!');
     addRemoveClass('videoPreview', 'hide', 'show');
     addRemoveClass('spanUploading', 'hide', 'show');
-    addRemoveClass('contentUploadingGif', 'hide', 'show');
+    addRemoveClass('contentUploadingGif', 'hide', 'show2');
     addRemoveClass('div-upload-progress-bar-gif', 'hide', 'show2');
     addRemoveClass('btns-uploading-gif', 'hide', 'show');
     addRemoveClass('btns-uploading-gif', 'hide', 'show');
@@ -165,7 +164,6 @@ function validateAndPrepareNavigator() {
 }
 
 function showVideoRecording(stream) {
-  console.log("se activa el evento del boton")
   document.getElementById('gifPreview').setAttribute('src', urlBlobGif);
   video = document.getElementById("videoRecord");
   // Older browsers may not have srcObject
@@ -185,7 +183,6 @@ function stopVideoRecording() {
     const tracks = stream.getTracks();
     blob = recorder.getBlob();
     urlBlobGif = URL.createObjectURL(blob);
-    // invokeSaveAsDialog(blob); este se le da cuando se va a descargar el gifo!!
     tracks.forEach(track => track.stop());
     recorder.reset();
     recorder.destroy();

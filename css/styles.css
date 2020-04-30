@@ -713,11 +713,21 @@ section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 21% 31% 21% 31%;
   font-family: "Chakra Petch", sans-serif;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif img {
+  margin-bottom: 15px;
 }
 
 section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .spanupper {
+  margin-bottom: 40px;
   font-size: 16px;
   color: #110038;
   letter-spacing: 0;
@@ -726,10 +736,10 @@ section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .spanupper 
 }
 
 section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .div-upload-progress-bar {
-  width: 240px;
+  width: 324px;
   height: 24px;
-  -webkit-box-shadow: inset -2px -2px 0 0 #2b2020, inset 2px 2px 0 0 #000;
-          box-shadow: inset -2px -2px 0 0 #2b2020, inset 2px 2px 0 0 #000;
+  -webkit-box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000;
+          box-shadow: inset -2px -2px 0 0 #fffcfc, inset 2px 2px 0 0 #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -756,9 +766,9 @@ section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .line-throu
   text-decoration: line-through;
 }
 
-section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .span {
+section.crearGifsBox .videoPreview .videoWindow .contentUploadingGif .spanSub {
   font-size: 12px;
-  color: rgba(17, 0, 56, 0.64);
+  color: lightgray;
   letter-spacing: 0;
   text-align: center;
   line-height: 14px;

@@ -55,7 +55,6 @@ const getAutocompleteSuggestedSearch = async (wordSearch) => {
     'GET',
     `${urlAutoComplete}api_key=${apiKey}&q=${wordSearch}`
   );
-    console.log(sugestedWords);
     
   const idAutocompleteSuggestedOptions = document.getElementById('search');
   idAutocompleteSuggestedOptions.innerHTML = '';

@@ -71,6 +71,11 @@ a div {
           box-shadow: inset -1px -1px 0 0 #A72CB3, inset 1px 1px 0 0 #FFFFFF;
 }
 
+.orange {
+  background: #FF6161 !important;
+  color: #ffffff;
+}
+
 .buttonGifos {
   color: #FFFFFF;
 }
@@ -152,5 +157,39 @@ a div {
 .hashTagBottom {
   background-image: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
   background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+}
+
+section.crearGifsBox .innerWindow {
+  background-image: -webkit-gradient(linear, right top, left top, from(#EE3EFE), to(#2E32FB));
+  background-image: linear-gradient(270deg, #EE3EFE 0%, #2E32FB 100%);
+  color: white;
+}
+
+section.crearGifsBox .principalBox {
+  background: #B4B4B4;
+}
+
+section.crearGifsBox .videoPreview {
+  background: #B4B4B4;
+}
+
+section.crearGifsBox .videoPreview .videoWindow {
+  background: #ffffff;
+  -webkit-box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+          box-shadow: inset -2px -2px 0 0 #B4B4B4, inset 2px 2px 0 0 #FFFFFF;
+}
+
+section.crearGifsBox .camaraSvg, section.crearGifsBox .btn-play-preview-gif {
+  background: #EE3EFE;
+  border: 1px solid #110038;
+  -webkit-box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+          box-shadow: inset -1px -1px 0 0 #997D97, inset 1px 1px 0 0 #FFFFFF;
+}
+
+section.misGifs input.misGifsInput {
+  background: #FFFAFE;
+  border: 1px solid #E6BBE2;
+  -webkit-box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
+          box-shadow: inset -2px -2px 0 0 #E6DCE4, inset 2px 2px 0 0 #80687D;
 }
 /*# sourceMappingURL=theme2.css.map */
