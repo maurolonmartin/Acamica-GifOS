@@ -5,6 +5,7 @@ var urlBlobGif;
 var blob;
 const idVideoRecord = document.getElementById('videoRecord');
 const clipboard = new Clipboard();
+const button = document.getElementById('readyGif');
 
 function startVideoRecording() {
 
@@ -28,7 +29,9 @@ function startVideoRecording() {
 
         onGifRecordingStarted: function() {
           takeScreenshotFromRecord();
+          button.disabled = false;
         }
+
       });
     })
     .catch(function(err) {

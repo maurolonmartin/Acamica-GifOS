@@ -10,7 +10,6 @@
   <link rel="stylesheet" type="text/css" href="./css/styles.css" />
   <link id="theme" rel="stylesheet" type="text/css" href="./css/pages/theme1.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/RecordRTC/5.5.8/RecordRTC.js"></script>
-  <!-- <script src="../js/firebaseCounter.js"></script> -->
 </head>
 
 <body>
@@ -102,7 +101,7 @@
       </div>
       <div class="videoWindow">
         <video id="videoRecord" class="videoRecord"></video>
-        <img id="gifPreview" class="gifPreview hide" alt="Foto del preview" src="any"/>
+        <img id="gifPreview" class="gifPreview hide" alt="Foto del preview" src="./assets/window_img.png"/>
         <div class="contentUploadingGif hide" id="contentUploadingGif">
           <img src="./assets/globe_img.png" alt="imagen del mapamundi">
           <span class="spanupper"><strong>Estamos subiendo tu guifo...</strong></span>
@@ -153,10 +152,10 @@
             <input type="text" id="chronometerGif" name="chronometerGif" class="chronometerGif hide"
               placeholder="00:00:00:00" readonly />
             <div class="recordingButtons">
-              <div class="camaraSvg orange hide" id="recordingSvg" onclick="readyGif()">
+              <div class="camaraSvg orange hide" id="recordingSvg">
                 <img src="./assets/recording.svg" alt="">
               </div>
-              <button id="readyGif" onclick="readyGif()" class="button orange hide">Listo</button>
+              <button id="readyGif" disabled onclick="readyGif()" class="button orange hide">Listo</button>
             </div>
           </div>
           
@@ -188,7 +187,7 @@
                 </div>
               </div>
             <div class="uploadButtons">
-              <button id="repeatCapture" onclick="repeatCapture();" class="button hide">Repetir captura</button>
+              <button id="repeatCapture" onclick="createGuifoButton();" class="button hide">Repetir captura</button>
               <button id="uploadGif" onclick="uploadGif();" class="button hide">Subir Guifo</button>
             </div>
           </div>
@@ -212,7 +211,7 @@
       </div>
       <div class="content">
         <div class="imgContainer">
-          <img id="gifPicture" src="any" alt="preview gif" />
+          <img id="gifPicture" src="./assets/window_img.png" alt="preview gif" />
         </div>
         <div class="btns-end-gif">
           <span><strong>Guifo creado con éxito</strong></span>
@@ -240,15 +239,7 @@
   <script src="./js/clipboard.js"></script>
   <script src="../js/recordRTC.js"></script>
   <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
-  
-  
   <script src="./js/api.js"></script>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-analytics.js"></script>
 </body>
 
 </html>
