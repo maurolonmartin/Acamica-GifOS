@@ -1,6 +1,6 @@
-# dwfs-med-glob-1-gifOS
+# Acamica-GifOS
 
-# Proyecto gifOS Acamica
+# Segunda entrega: gifOS Acamica
 
 Development of a catalog of GIFs containing search functionality, interaction with an external API and capture of video.
 
